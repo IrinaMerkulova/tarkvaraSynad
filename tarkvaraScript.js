@@ -1,4 +1,5 @@
 function randomSyna(){
+// esimese masiivi loomine
 
     const synad=[
         'teostus',
