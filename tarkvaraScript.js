@@ -67,37 +67,63 @@ const synadvene = [
     'разработка',
     'валидация'
 ];
+let praeguneEestiIndeks = null;
+let praeguseVeneIndex = null;
 
-let praeguneIndex = null;
-
-function randomSyna(){
-    //random sõna - arv
-    const juhuslikSyna = Math.floor(Math.random() * synad.length);
-    //võtame random sõna massivist
-    const syna = synad[juhuslikSyna];
-    //lisame html-lehele
-    document.getElementById("random-syna").innerHTML = syna;
-    praeguneIndex = juhuslikSyna;
+// Juhusliku eestikeelse sõna genereerimine
+function randomEesti() {
+    praeguneEestiIndeks = Math.floor(Math.random() * synad.length);
+    document.getElementById("eesti-syna").textContent = synad[praeguneEestiIndeks];
+    document.getElementById("eesti-input").value = "";
+    document.getElementById("eesti-tulemus").textContent = "";
 }
 
-function checkTranslation() {
-    //Kontrollida, kas sõna on genereeritud
-    if (praeguneIndex === null) {
-        document.getElementById("vastus").textContent = "Genereeri kõigepealt sõna!";
-        return;
-    }
-    // kasutaja sisestatud tõlge
-    const kasutajaInput = document.getElementById("kontroll").value.trim().toLowerCase();
-    if (kasutajaInput === "") {
-        document.getElementById("vastus").textContent = "Palun sisestage tõlge";
-        return;
-    }
-    //Hangi õige tõlge ja võrdle
-    const correctTranslation = synadvene[praeguneIndex].toLowerCase();
+// Tõlke kontrollimine eesti keelest vene keelde
+function KontrolligeEestiKeele() {
+    if (praeguneEestiIndeks === null) return;
 
-    if (kasutajaInput === correctTranslation) {
-        document.getElementById("vastus").textContent = "Nii ongi!";
+    const kasutajaInput = document.getElementById("eesti-input").value.trim().toLowerCase();
+    const korrektneTolge = synadvene[praeguneEestiIndeks].toLowerCase();
+
+    if (kasutajaInput === "") {
+        document.getElementById("eesti-tulemus").textContent = "";
+        return;
+    }
+
+    if (kasutajaInput === korrektneTolge) {
+        document.getElementById("eesti-tulemus").textContent = "Правильно!";
+        document.getElementById("eesti-tulemus").className = "correct";
     } else {
-        document.getElementById("vastus").textContent = "Vale! Õige tõlge on: " + synadvene[praeguneIndex];
+        document.getElementById("eesti-tulemus").textContent = "Неправильно! Правильный перевод: " + korrektneTolge;
+        document.getElementById("eesti-tulemus").className = "incorrect";
+    }
+}
+
+// Juhuslik vene keele sõnade genereerimine
+function randomVene() {
+    praeguseVeneIndex = Math.floor(Math.random() * synadvene.length);
+    document.getElementById("vene-syna").textContent = synadvene[praeguseVeneIndex];
+    document.getElementById("vene-input").value = "";
+    document.getElementById("vene-tulemus").textContent = "";
+}
+
+// Tõlke kontrollimine vene keelest eesti keelde
+function KontrolligeVeneKeele() {
+    if (praeguseVeneIndex === null) return;
+
+    const kasutajaInput = document.getElementById("vene-input").value.trim().toLowerCase();
+    const korrektneTolge = synad[praeguseVeneIndex].toLowerCase();
+
+    if (kasutajaInput === "") {
+        document.getElementById("vene-tulemus").textContent = "";
+        return;
+    }
+
+    if (kasutajaInput === korrektneTolge) {
+        document.getElementById("vene-tulemus").textContent = "Õige!";
+        document.getElementById("vene-tulemus").className = "correct";
+    } else {
+        document.getElementById("vene-tulemus").textContent = "Vale! Õige tõlge: " + korrektneTolge;
+        document.getElementById("vene-tulemus").className = "incorrect";
     }
 }
