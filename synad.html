@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
-    <script src="tarkvaraScript.js"></script>
+    <script src="tarkvaraScript.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<!--TA sõnad on vaja pähe õppida!-->
-<h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="kontrolliToigett()">
-<div id="vastus"></div>
-
-
+<div class="container">
+    <div class="table-container">
+        <h1>Tarkvara sõnad</h1>
+        <table>
+            <tr>
+                <th>Eestikeelne sõna</th>
+                <th>Venekeelne tõlge</th>
+            </tr>
+            <tr>
+                <td id="random-syna"></td>
+                <td>
+                    <input type="text" id="kontroll">
+                </td>
+            </tr>
+        </table>
+        <div id="vastus"></div>
+        <br>
+        <button onclick="randomSyna()">Juhuslik sõna</button>
+    </div>
+</div>
 </body>
 </html>
