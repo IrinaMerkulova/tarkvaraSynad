@@ -4,25 +4,49 @@
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
     <script src="tarkvaraScript.js"></script>
+    <link rel="stylesheet" href="synad.css">
 </head>
 <body>
 <!-- TA sõnad on vaja pähe õppida -->
 <h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="checkSyna()">
-<div id="vastus"></div>
-<br>
-<input type="button" value="juhuslik sõna" onclick="randomSynaEesti()">
-<br>
-<br>
-<div id="random-synaEesti"></div>
-<label for="kontrollEesti">Kirjuta sõna eesti keeles</label>
-<input type="text" id="kontrollEesti" oninput="checkSynaEesti()">
-<div id="vastusEesti"></div>
-
+<table>
+    <tr>
+        <th>
+            Sõna
+        </th>
+        <th>
+            Ülesanne
+        </th>
+        <th>
+            Vastus
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="juhuslik sõna" onclick="randomSyna()">
+            <div id="random-syna"></div>
+        </td>
+        <td>
+            <label for="kontroll">Kirjuta sõna vene keeles</label><br>
+            <input type="text" id="kontroll" oninput="checkSyna()" onload="checkSyna()">
+        </td>
+        <td>
+            <div id="vastus">Sisestage vastus</div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="juhuslik sõna" onclick="randomSynaEesti()">
+            <div id="random-synaEesti"></div>
+        </td>
+        <td>
+            <label for="kontrollEesti">Kirjuta sõna eesti keeles</label><br>
+            <input type="text" id="kontrollEesti" oninput="checkSynaEesti()" onload="checkSynaEesti()">
+        </td>
+        <td>
+            <div id="vastusEesti">Sisestage vastus</div>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
