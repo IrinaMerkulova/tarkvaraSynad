@@ -26,7 +26,7 @@ const synad = {
     'kasutamine': "использование",
     'hooldus': "управление",
     'eelised': "преимущество",
-    'puudused': "от",
+    'puudused': "отсутствие",
     'elutsükkel': "бесконечный цикл",
     'arendamine': "развитие",
     'valideerimine': "валидация"
@@ -72,7 +72,6 @@ function checkSyna(keel){
         vastusContainer.innerText = "";
         return;
     }
-
     let access = true;
     if(currentSynad[keel].tolge !== input.value){
         for(let i = 0; i < input.value.length; i++){
