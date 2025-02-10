@@ -24,7 +24,7 @@
 }
 
 input[type="button"] {
-    background-color: #fdb40e;
+    background-color: #003b79;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -35,20 +35,33 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-    background-color: #b18414;
+    background-color: #227bdc;
 }
 body{
-    background-color: #005c07;
+    background-color: #bd70b4;
 }
 h1 {
-    color: #fdb40e;
+    color: #003b7d;
 }
 
 label[for="kontroll"] {
-    color: #fdb40e;
+    color: #003b7c;
 }
 
 label[for="kontroll-reverse"] {
-    color: #fdb40e;
+    color: #003b7b;
 }
 
+#random-syna {
+    font-size: 24px;
+    color: #003b7a;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#random-syna-reverse {
+    font-size: 24px;
+    color: #003b79;
+    font-weight: bold;
+    margin: 20px 0;
+}
