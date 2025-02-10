@@ -78,4 +78,18 @@ function randomSyna(){
 
     //lisame html-lehele
     document.getElementById("random-syna").innerHTML=syna;
+
+    function checkTranslation() {
+        //Kontrollida, kas sõna on genereeritud
+        if (currentIndex === null) {
+            document.getElementById("result").textContent = "Genereeri kõigepealt sõna!";
+            return;
+        }
+        // kasutaja sisestatud tõlge
+        const userInput = document.getElementById("userTranslation").value.trim().toLowerCase();
+        if (userInput === "") {
+            document.getElementById("result").textContent = "Palun sisestage tõlge";
+            return;
+        }
+    }
 }
