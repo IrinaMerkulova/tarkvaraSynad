@@ -67,6 +67,7 @@ const synadvene = [
     'разработка',
     'валидация'
 ];
+
 let praeguneEestiIndeks = null;
 let praeguseVeneIndex = null;
 
@@ -94,7 +95,7 @@ function KontrolligeEestiKeele() {
         document.getElementById("eesti-tulemus").textContent = "Õige!";
         document.getElementById("eesti-tulemus").className = "correct";
     } else {
-        document.getElementById("eesti-tulemus").textContent = "Vale! Õige tõlge: " + korrektneTolge;
+        document.getElementById("eesti-tulemus").textContent = "Viga";
         document.getElementById("eesti-tulemus").className = "incorrect";
     }
 }
@@ -123,7 +124,7 @@ function KontrolligeVeneKeele() {
         document.getElementById("vene-tulemus").textContent = "Õige!";
         document.getElementById("vene-tulemus").className = "correct";
     } else {
-        document.getElementById("vene-tulemus").textContent = "Vale! Õige tõlge: " + korrektneTolge;
+        document.getElementById("vene-tulemus").textContent = "Viga";
         document.getElementById("vene-tulemus").className = "incorrect";
     }
 }
