@@ -4,9 +4,51 @@
     padding: 10px;
     border: 1px solid green;
 }
+
 .incorrect {
     background-color: #f8d7da;
     color: red;
     padding: 10px;
     border: 1px solid red;
 }
+
+.input-box, .output-box {
+    border: 2px solid #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+input[type="button"] {
+    background-color: #fdb40e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+input[type="button"]:hover {
+    background-color: #b18414;
+}
+body{
+    background-color: #005c07;
+}
+h1 {
+    color: #fdb40e;
+}
+
+label[for="kontroll"] {
+    color: #fdb40e;
+}
+
+label[for="kontroll-reverse"] {
+    color: #fdb40e;
+}
+
