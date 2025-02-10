@@ -11,11 +11,11 @@ const synad = {
     'andmestruktuur': "структура данных",
     'arenduskeskkond': "среда разработки",
     'projektihalduse tööriist': "инструмент управления проектом",
-    'kavandamine': "",
+    'kavandamine': "планирование",
     'iteratsioon': "итерация",
     'parandus': "правка",
     'parandamine': "исправление",
-    'koskmudel': "",
+    'koskmudel': "модель коскада",
     'agiilne mudel': "агильная модель",
     'spiraalne mudel': "спиральная модель",
     'inkrementaalne mudel': "инкриментальная модель",
@@ -31,6 +31,7 @@ const synad = {
     'arendamine': "развитие",
     'valideerimine': "валидация"
 };
+
 const currentSynad = {
     vene:{
         currentSyna:"",
