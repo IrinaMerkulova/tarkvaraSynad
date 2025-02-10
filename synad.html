@@ -18,13 +18,32 @@
             <tr>
                 <td id="random-syna"></td>
                 <td>
-                    <input type="text" id="kontroll" placeholder="kirjuta sõna tõlge">
+                    <input type="text" id="kontroll" placeholder="Kirjuta sõna tõlge">
                 </td>
             </tr>
         </table>
         <div id="vastus"></div>
         <br>
         <button onclick="randomSyna()">Juhuslik sõna</button>
+    </div>
+
+    <!-- Вторая таблица под первой -->
+    <div class="table-container">
+        <h2>Vali sõna kirjeldus</h2>
+        <table>
+            <tr>
+                <th>Sõna</th>
+                <th>Kirjeldus</th>
+            </tr>
+            <tr>
+                <td>
+                    <select id="wordSelect" onchange="showDescription()">
+                        <option value="">Vali sõna...</option>
+                    </select>
+                </td>
+                <td id="description"></td>
+            </tr>
+        </table>
     </div>
 </div>
 </body>

@@ -1,72 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("kontroll").addEventListener("input", kontrolliToiget);
+    populateDropdown();
 });
 
-const  synad = [
-    "teostus",
-    "algoritm",
-    "kavand",
-    "kasutajaliides",
-    "mudel",
-    "andmebaasi skeem",
-    "standart",
-    "tsükkel",
-    "andmetöötlus",
-    "andmestruktuur",
-    "arenduskeskkond",
-    "projektihalduse tööriist",
-    "kavandamine", "iteratsioon",
-    "parandus",
-    "parandamine", "koskmudel",
-    "agiilne mudel",
-    "spiraalne mudel",
-    "inkrementaalne mudel",
-    "nõudmised",
-    "realiseerimine",
-    "testimine",
-    "integreerimine",
-    "kasutamine",
-    "hooldus",
-    "eelised",
-    "puudused",
-    "elutsükkel",
-    "arendamine",
-    "valideerimine"
+const synad = [
+    "teostus", "algoritm", "kavand", "kasutajaliides", "mudel",
+    "andmebaasi skeem", "standart", "tsükkel", "andmetöötlus", "andmestruktuur"
 ];
 
 const synadTolge = [
-    "реализация",
-    "алгоритм",
-    "план",
-    "пользовательский интерфейс",
-    "модель",
-    "схема базы данных",
-    "стандарт",
-    "цикл",
-    "обработка данных",
-    "структура данных",
-    "среда разработки",
-    "инструмент управления проектами",
-    "проектирование",
-    "итерация",
-    "исправление",
-    "улучшение",
-    "каскадная модель",
-    "гибкая модель",
-    "спиральная модель",
-    "инкрементальная модель",
-    "требования",
-    "осуществление",
-    "тестирование",
-    "интеграция",
-    "использование",
-    "обслуживание",
-    "преимущества",
-    "недостатки",
-    "жизненный цикл",
-    "разработка",
-    "валидация"
+    "реализация", "алгоритм", "план", "пользовательский интерфейс", "модель",
+    "схема базы данных", "стандарт", "цикл", "обработка данных", "структура данных"
 ];
+
 const wordDescriptions = {
     "Andmetöötlus": "Andmete manipuleerimine arvuti abil, sisaldades nende teisendamist ja töötlemist.",
     "Andmetöötlussüsteem": "Süsteem, mis teeb sisendandmetega mitmesuguseid matemaatilisi operatsioone.",
@@ -80,8 +26,8 @@ const wordDescriptions = {
 };
 
 function randomSyna() {
-    const juhuslikIndex = Math.floor(Math.random() *  synad.length);
-    const syna =  synad[juhuslikIndex];
+    const juhuslikIndex = Math.floor(Math.random() * synad.length);
+    const syna = synad[juhuslikIndex];
     const toigeTolge = synadTolge[juhuslikIndex];
 
     document.getElementById("random-syna").innerHTML = syna;
@@ -102,23 +48,24 @@ function kontrolliToiget() {
         vastusElement.innerHTML = " Vale!";
         vastusElement.style.color = "red";
     }
-    function populateDropdown() {
-        const dropdown = document.getElementById("wordSelect");
-        for (const word in wordDescriptions) {
-            let option = document.createElement("option");
-            option.value = word;
-            option.textContent = word;
-            dropdown.appendChild(option);
-        }
-    }
+}
 
-    function showDescription() {
-        const selectedWord = document.getElementById("wordSelect").value;
-        const descriptionElement = document.getElementById("description");
-        if (selectedWord) {
-            descriptionElement.textContent = wordDescriptions[selectedWord];
-        } else {
-            descriptionElement.textContent = "";
-        }
+function populateDropdown() {
+    const dropdown = document.getElementById("wordSelect");
+    for (const word in wordDescriptions) {
+        let option = document.createElement("option");
+        option.value = word;
+        option.textContent = word;
+        dropdown.appendChild(option);
+    }
+}
+
+function showDescription() {
+    const selectedWord = document.getElementById("wordSelect").value;
+    const descriptionElement = document.getElementById("description");
+    if (selectedWord) {
+        descriptionElement.textContent = wordDescriptions[selectedWord];
+    } else {
+        descriptionElement.textContent = "";
     }
 }
