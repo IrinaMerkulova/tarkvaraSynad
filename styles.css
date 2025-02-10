@@ -1,3 +1,6 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 table {
     border-collapse: collapse;
 }
@@ -13,4 +16,10 @@ td div {
 }
 td input {
     width: fit-content;
+}
+#description{
+    padding-top:10px;
+    padding-left:10px;
+    width:40%;
+    text-align: justify;
 }
