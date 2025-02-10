@@ -8,14 +8,33 @@
 <body>
 <!-- TA sõnad on vaja pühe õppida -->
 <h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="">
-<div id="vastus"></div>
 
+<table>
+    <thead>
+        <tr>
+            <th>Eesti - Vene</th>
+            <th>Vene - Eesti</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="button" value="juhuslik sõna" onclick="randomSyna('vene')"></td>
+            <td><input type="button" value="juhuslik sõna" onclick="randomSyna('eesti')"></td>
+        </tr>
+        <tr>
+            <td><p id="vene-syna"></p></td>
+            <td><p id="eesti-syna"></p></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="vene-kontroll" oninput="checkSyna('vene')"></td>
+            <td><input type="text" id="eesti-kontroll" oninput="checkSyna('eesti')"></td>
+        </tr>
+        <tr>
+            <td><p id="vene-vastus"></p></td>
+            <td><p id="eesti-vastus"></p></td>
+        </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
