@@ -33,7 +33,6 @@ function randomSyna(){
         'elutsükkel',
         'arendamine',
         'valideerimine'
-
     ];
     //random sõna - arv
     const juhuslikSyna=Math.floor(Math.random()*synad.length);
