@@ -1,3 +1,4 @@
+/* Общие стили для страницы */
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(45deg, #6a11cb, #2575fc);
@@ -17,6 +18,43 @@ h2 {
     color: #ffcc00;
 }
 
+/* Стили для блока с выбором слова и его значением */
+#word-meaning-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#word-select {
+    background-color: #34495e;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#word-select:focus {
+    outline: none;
+    background-color: #6a11cb;
+}
+
+#word-meaning {
+    font-size: 20px;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+/* Стили для кнопок и других элементов интерфейса */
 input[type="button"] {
     background-color: #ffcc00;
     color: #333;
@@ -32,7 +70,7 @@ input[type="button"]:hover {
     background-color: #ff9900;
 }
 
-
+/* Оформление таблицы и её элементов */
 table {
     width: 80%;
     margin: 0 auto;
@@ -77,6 +115,7 @@ input[type="text"]:focus {
     border-color: #ffcc00;
 }
 
+/* Ответы на перевод */
 #vastus {
     margin-top: 15px;
     font-size: 20px;
@@ -105,4 +144,3 @@ label {
     font-size: 20px;
     color: #ffcc00;
 }
-
