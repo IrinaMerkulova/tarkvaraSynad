@@ -35,17 +35,6 @@ function randomSyna(){
         'valideerimine'
 
     ];
-    //random sõna - arv
-    const juhuslikSyna=Math.floor(Math.random()*synad.length);
-
-    //võtame random sõna massivist
-    const syna=synad[juhuslikSyna];
-
-    //lisame html-lehele
-    document.getElementById("random-syna").innerHTML=syna;
-}
-
-function synadeTolge(){
     const tolgitudSynad=[
         'реализация',
         'алгоритм',
@@ -79,5 +68,21 @@ function synadeTolge(){
         'разработка',
         'валидация'
 
-    ]
+    ];
+    //random sõna - arv
+    const juhuslikSyna=Math.floor(Math.random()*synad.length);
+
+    //võtame random sõna massivist
+    const syna = synad[juhuslikSyna];
+    tolgitudSyna = tolgitudSynad[juhuslikSyna]; // Запоминаем правильный перевод
+
+    // Добавляем выбранное слово на страницу HTML
+    document.getElementById("random-syna").innerHTML = syna;
 }
+
+function synadeTolge() {
+
+}
+
+// Добавляем событие для проверки на ввод текста
+document.getElementById("kontroll").addEventListener('input', synadeTolge);
