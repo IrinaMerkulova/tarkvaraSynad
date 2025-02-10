@@ -45,17 +45,15 @@ const currentSynad = {
 
 function randomSyna(keel){
     let arraySynad;
-// esimese masiivi loomine
+    // esimese masiivi loomine
     if(keel === "vene") arraySynad = Object.keys(synad);
     else arraySynad = Object.values(synad);
     //random sõna - arv
     const juhuslikSyna = Math.floor(Math.random() * arraySynad.length);
     currentSynad[keel]["currentSyna"] = arraySynad[juhuslikSyna];
-    console.log(currentSynad[keel]["currentSyna"], keel);
+
     if(keel === "eesti"){
         const keys = Object.keys(synad);
-
-        console.log("eeei")
         for(let i = 0; i < keys.length; i++){
             if(synad[keys[i]] === currentSynad[keel]["currentSyna"]){
                 currentSynad[keel]["tolge"] = keys[i]
@@ -65,13 +63,40 @@ function randomSyna(keel){
     else{
         currentSynad[keel]["tolge"] = synad[currentSynad[keel]["currentSyna"]];
     }
-    //võtame random sõna massivist
-
-    //lisame html-lehele
-    document.getElementById(`${keel}-syna`).innerHTML = currentSynad[keel]["currentSyna"];
+    document.getElementById(`${keel}-syna`).innerHTML = `Juhuslik ${keel === "eesti" ? "vene" : "eesti"} sõna: <strong>${currentSynad[keel]["currentSyna"]}</strong>`;
 }
 function checkSyna(keel){
+
     const vastusContainer = document.getElementById(`${keel}-vastus`);
     const input = document.getElementById(`${keel}-kontroll`);
-    vastusContainer.innerText = currentSynad[keel].tolge === input.value ? "õige" : "vale";
+    if(input.value === ""){
+        vastusContainer.innerText = "";
+        return;
+    }
+
+    let access = true;
+    console.log(currentSynad[keel].tolge, input.value, "oook", currentSynad[keel].tolge !== input.value)
+    if(currentSynad[keel].tolge !== input.value){
+        for(let i = 0; i < input.value.length; i++){
+            console.log(input.value[i], currentSynad[keel].tolge[i])
+            if(input.value[i] === currentSynad[keel].tolge[i]){
+                continue;
+            }
+            else{
+                access = false;
+                break;
+            }
+        }
+    }
+    else {
+        vastusContainer.innerText = "Õige!";
+        vastusContainer.style.color = "green";
+        return;
+    }
+    vastusContainer.innerText = access ? "" : "Vale";
+    vastusContainer.style.color = access ? "" : "red";
+
+
+
+
 }

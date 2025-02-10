@@ -77,17 +77,15 @@ const currentSynad = {
 
 function randomSyna(keel){
     let arraySynad;
-// esimese masiivi loomine
-    if(keel === "vene") arraySynad = synad;
-    else arraySynad = synad2;
+    // esimese masiivi loomine
+    if(keel === "vene") arraySynad = Object.keys(synad);
+    else arraySynad = Object.values(synad);
     //random sõna - arv
     const juhuslikSyna = Math.floor(Math.random() * arraySynad.length);
     currentSynad[keel]["currentSyna"] = arraySynad[juhuslikSyna];
-    console.log(currentSynad[keel]["currentSyna"], keel);
+
     if(keel === "eesti"){
         const keys = Object.keys(synad);
-
-        console.log("eeei")
         for(let i = 0; i < keys.length; i++){
             if(synad[keys[i]] === currentSynad[keel]["currentSyna"]){
                 currentSynad[keel]["tolge"] = keys[i]
@@ -97,13 +95,13 @@ function randomSyna(keel){
     else{
         currentSynad[keel]["tolge"] = synad[currentSynad[keel]["currentSyna"]];
     }
-    //võtame random sõna massivist
-
-    //lisame html-lehele
-    document.getElementById(`${keel}-syna`).innerHTML = currentSynad[keel]["currentSyna"];
+    document.getElementById(`${keel}-syna`).innerHTML = `Juhuslik ${keel === "eesti" ? "vene" : "eesti"} sõna: <strong>${currentSynad[keel]["currentSyna"]}</strong>`;
 }
 function checkSyna(keel){
     const vastusContainer = document.getElementById(`${keel}-vastus`);
     const input = document.getElementById(`${keel}-kontroll`);
-    vastusContainer.innerText = currentSynad[keel].tolge === input.value ? "õige" : "vale";
+    const isCorrect = currentSynad[keel].tolge === input.value;
+    vastusContainer.innerText = isCorrect ? "Õige!" : "Vale";
+    vastusContainer.style.color = isCorrect ? "green" : "red";
+
 }

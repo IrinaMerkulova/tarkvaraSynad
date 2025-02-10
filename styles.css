@@ -5,3 +5,12 @@ table td, th {
     border: 1px solid black;
 
 }
+td div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+td input {
+    width: fit-content;
+}
