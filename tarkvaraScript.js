@@ -13,7 +13,7 @@ function randomSyna(){
         'andmetöötlus',
         'andmestruktuur',
         'arenduskeskkond',
-        'projektihaldus tööriist',
+        'projektihalduse tööriist',
         'kavandamine',
         'iteratsioon',
         'parandus',
