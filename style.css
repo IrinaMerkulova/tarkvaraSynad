@@ -1,0 +1,12 @@
+.correct {
+    background-color: #d4edda;
+    color: green;
+    padding: 10px;
+    border: 1px solid green;
+}
+.incorrect {
+    background-color: #f8d7da;
+    color: red;
+    padding: 10px;
+    border: 1px solid red;
+}
