@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
     <script src="tarkvaraScript.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- TA sõnad on vaja pähe õppida-->
-<h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="checkTranslation()">
-<div id="vastus"></div>
+<div class="container">
+    <h1>Tarkvara sõnad</h1>
+    <div class="juhustlik">
+        <input type="button" value="Juhuslik sõna (Estonian)" onclick="randomSyna()">
+    </div>
+    <br>
+    <div id="random-syna"></div>
+    <label for="kontroll">Kirjuta sõna vene keeles:</label>
+    <input type="text" id="kontroll" oninput="checkTranslation()">
+    <div id="vastus"></div>
 
-<h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="ee_randomSyna()">
-<br>
-<br>
-<div id="ee_random-syna"></div>
-<label for="ee_kontroll">Kirjuta sõna eesti keeles</label>
-<input type="text" id="ee_kontroll" oninput="ee_checkTranslation()">
-<div id="ee_vastus"></div>
-
+    <br>
+    <input type="button" value="Juhuslik sõna (Russian)" onclick="ee_randomSyna()">
+    <br>
+    <div id="ee_random-syna"></div>
+    <label for="ee_kontroll">Kirjuta sõna eesti keeles:</label>
+    <input type="text" id="ee_kontroll" oninput="ee_checkTranslation()">
+    <div id="ee_vastus"></div>
+</div>
 </body>
 </html>
