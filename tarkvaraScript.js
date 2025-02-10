@@ -1,3 +1,5 @@
+
+
 const synad = [
     'teostus', 'algoritm', 'kavand', 'kasutajaliides', 'mudel', 'andmebaasi skeem',
     'standart', 'tsükkel', 'andmetöötlus', 'andmestruktuur', 'arenduskeskkond', 'projektihalduse tööriist',
