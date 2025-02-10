@@ -1,53 +1,35 @@
-const synad = {
-    'teostus': 'выполнение',
-    'algoritm': 'алгоритм',
-    'kavand': 'план',
-    'kasutajaliides': 'пользовательский интерфейс',
-    'mudel': 'модель',
-    'andmebaasi skeem': 'схема базы данных',
-    'standart': 'стандарт',
-    'tsükkel': 'цикл',
-    'andmetöötlus': 'обработка данных',
-    'andmestruktuur': 'структура данных',
-    'arenduskeskkond': 'среда разработки',
-    'projektihalduse tööriist': 'инструмент управления проектами',
-    'kavandamine': 'проектирование',
-    'iteratsioon': 'итерация',
-    'parandus': 'исправление',
-    'parandamine': 'улучшение',
-    'koskmudel': 'каскадная модель',
-    'agiilne mudel': 'гибкая модель',
-    'spiraalne mudel': 'спиральная модель',
-    'inkrementaalne mudel': 'инкрементальная модель',
-    'nõudmised': 'требования',
-    'realiseerimine': 'реализация',
-    'testimine': 'тестирование',
-    'integreerimine': 'интеграция',
-    'kasutamine': 'использование',
-    'hooldus': 'обслуживание',
-    'eelised': 'преимущества',
-    'puudused': 'недостатки',
-    'elutsükkel': 'жизненный цикл',
-    'arendamine': 'разработка',
-    'valideerimine': 'валидация'
-};
+const synadET = [
+    'teostus', 'algoritm', 'kavand', 'kasutajaliides', 'mudel',
+    'andmebaasi skeem', 'standart', 'tsükkel', 'andmetöötlus', 'andmestruktuur',
+    'arenduskeskkond', 'projektihalduse tööriist', 'kavandamine', 'iteratsioon', 'parandus',
+    'parandamine', 'koskmudel', 'agiilne mudel', 'spiraalne mudel', 'inkrementaalne mudel',
+    'nõudmised', 'realiseerimine', 'testimine', 'integreerimine', 'kasutamine',
+    'hooldus', 'eelised', 'puudused', 'elutsükkel', 'arendamine', 'valideerimine'
+];
+
+const synadRU = [
+    'выполнение', 'алгоритм', 'план', 'пользовательский интерфейс', 'модель',
+    'схема базы данных', 'стандарт', 'цикл', 'обработка данных', 'структура данных',
+    'среда разработки', 'инструмент управления проектами', 'проектирование', 'итерация', 'исправление',
+    'улучшение', 'каскадная модель', 'гибкая модель', 'спиральная модель', 'инкрементальная модель',
+    'требования', 'реализация', 'тестирование', 'интеграция', 'использование',
+    'обслуживание', 'преимущества', 'недостатки', 'жизненный цикл', 'разработка', 'валидация'
+];
 
 let currentWordET = '';
 let currentWordRU = '';
 
 function randomSyna() {
-    const keys = Object.keys(synad);
-    const juhuslikSyna = Math.floor(Math.random() * keys.length);
-    currentWordET = keys[juhuslikSyna];
+    const juhuslikSyna = Math.floor(Math.random() * synadET.length);
+    currentWordET = synadET[juhuslikSyna];
     document.getElementById("random-syna-et").innerHTML = currentWordET;
     document.getElementById("kontroll-et").value = "";
     document.getElementById("vastus-et").innerText = "";
 }
 
 function randomSynaRU() {
-    const values = Object.values(synad);
-    const juhuslikSyna = Math.floor(Math.random() * values.length);
-    currentWordRU = values[juhuslikSyna];
+    const juhuslikSyna = Math.floor(Math.random() * synadRU.length);
+    currentWordRU = synadRU[juhuslikSyna];
     document.getElementById("random-syna-ru").innerHTML = currentWordRU;
     document.getElementById("kontroll-ru").value = "";
     document.getElementById("vastus-ru").innerText = "";
@@ -55,7 +37,7 @@ function randomSynaRU() {
 
 function kontrolliTolgeET() {
     const userInput = document.getElementById("kontroll-et").value.trim().toLowerCase();
-    const correctAnswer = synad[currentWordET].toLowerCase();
+    const correctAnswer = synadRU[synadET.indexOf(currentWordET)].toLowerCase();
 
     if (userInput === correctAnswer) {
         document.getElementById("vastus-et").innerText = "Õige! ✅";
@@ -68,7 +50,7 @@ function kontrolliTolgeET() {
 
 function kontrolliTolgeRU() {
     const userInput = document.getElementById("kontroll-ru").value.trim().toLowerCase();
-    const correctAnswer = Object.keys(synad).find(key => synad[key].toLowerCase() === currentWordRU.toLowerCase());
+    const correctAnswer = synadET[synadRU.indexOf(currentWordRU)].toLowerCase();
 
     if (userInput === correctAnswer) {
         document.getElementById("vastus-ru").innerText = "Õige! ✅";
@@ -78,4 +60,3 @@ function kontrolliTolgeRU() {
         document.getElementById("vastus-ru").style.color = "red";
     }
 }
-
