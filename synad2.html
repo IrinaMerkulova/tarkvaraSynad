@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarkvara sõnad</title>
+    <script src="tarkvaraScript2.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- TA sõnad on vaja pühe õppida -->
+<h1>Tarkvara sõnad</h1>
+
+<table style="border: 1px solid black">
+    <thead>
+    <tr>
+        <th>Eesti - Vene</th>
+        <th>Vene - Eesti</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="button" value="juhuslik sõna" onclick="randomSyna('vene')"></td>
+        <td><input type="button" value="juhuslik sõna" onclick="randomSyna('eesti')"></td>
+    </tr>
+    <tr>
+        <td><p id="vene-syna"></p></td>
+        <td><p id="eesti-syna"></p></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="vene-kontroll" oninput="checkSyna('vene')"></td>
+        <td><input type="text" id="eesti-kontroll" oninput="checkSyna('eesti')"></td>
+    </tr>
+    <tr>
+        <td><p id="vene-vastus"></p></td>
+        <td><p id="eesti-vastus"></p></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
