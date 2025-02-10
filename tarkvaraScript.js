@@ -78,7 +78,7 @@ function randomSyna(){
     const translatedWords = veneSynad[translationIndex];
 
 
-    document.getElementById("random-syna").innerHTML = `Слово: ${syna}<br>Перевод: ${translatedWord}`;
+    document.getElementById("random-syna").innerHTML = `Sõna: ${syna}<br>Tõlgitud: ${translatedWord}`;
 
     //lisame html-lehele
     document.getElementById("kontroll").setAttribute("data-translation", translatedWord);
@@ -92,10 +92,10 @@ function checkTranslation() {
     const responseElement = document.getElementById("vastus");
 
     if (userInput.trim().toLowerCase() === correctTranslation.toLowerCase()) {
-        responseElement.innerHTML = "Правильно!";
+        responseElement.innerHTML = "Õige!";
         responseElement.style.color = "green";
     } else {
-        responseElement.innerHTML = "Неправильно!";
+        responseElement.innerHTML = "Vale!";
         responseElement.style.color = "red";
     }
 }
