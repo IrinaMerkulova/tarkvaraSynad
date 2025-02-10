@@ -91,33 +91,37 @@ function kontrollSyna() {
     }
 }
 
-function getRandomWord() {
-    const keys = Object.keys(sonastik);
+function getRandomKey() {
+    let keys = Object.keys(sonastik);
     return keys[Math.floor(Math.random() * keys.length)];
 }
 
 function uuendaTabel() {
-    const estSona = getRandomWord();
-    const rusSona = sonastik[estSona];
+    let veneSona = getRandomKey();
+    let estSona;
 
-    document.getElementById("est-word").textContent = estSona;
-    document.getElementById("rus-word").textContent = rusSona;
-    document.getElementById("vastus2").textContent = "";
-    document.getElementById("vastus3").textContent = "";
+    do {
+        estSona = getRandomKey();
+    } while (estSona === veneSona);
+
+    document.getElementById("est-word").textContent = veneSona;
+    document.getElementById("rus-word").textContent = sonastik[estSona];
 }
 
-function kontrollEesti() {
-    const estSona = document.getElementById("est-word").textContent;
-    const input = document.getElementById("est-input").value.trim().toLowerCase();
-    const correct = sonastik[estSona].toLowerCase();
-    document.getElementById("vastus2").textContent = input === correct ? "Õige!" : "Vale!";
-    document.getElementById("vastus2").style.color = input === correct ? "green" : "red";
+function kontrollEst() {
+    let sisend = document.getElementById("est-input").value.trim().toLowerCase();
+    let oigeVastus = sonastik[document.getElementById("est-word").textContent].toLowerCase();
+    let tulemus = document.getElementById("vastus-est");
+
+    tulemus.textContent = sisend === oigeVastus ? "Õige!" : "Vale!";
+    tulemus.style.color = sisend === oigeVastus ? "green" : "red";
 }
 
-function kontrollVene() {
-    const rusSona = document.getElementById("rus-word").textContent;
-    const input = document.getElementById("rus-input").value.trim().toLowerCase();
-    const correct = Object.keys(sonastik).find(key => sonastik[key] === rusSona);
-    document.getElementById("vastus3").textContent = input === correct ? "Õige!" : "Vale!";
-    document.getElementById("vastus3").style.color = input === correct ? "green" : "red";
+function kontrollRus() {
+    let sisend = document.getElementById("rus-input").value.trim().toLowerCase();
+    let oigeVastus = Object.keys(sonastik).find(key => sonastik[key] === document.getElementById("rus-word").textContent);
+    let tulemus = document.getElementById("vastus-rus");
+
+    tulemus.textContent = sisend === oigeVastus ? "Õige!" : "Vale!";
+    tulemus.style.color = sisend === oigeVastus ? "green" : "red";
 }
