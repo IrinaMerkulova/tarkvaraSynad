@@ -1,4 +1,23 @@
+const wordMeanings = {
+    'andmetöötlussüsteem': 'riistvarast, tarkvarast ja inimestest koosnev süsteem andmete muutmiseks kasutatavaks informatsiooniks',
+    'draiver': 'utiliitprogramm, mis teeb lisaseadmed operatsioonisüsteemile kättesaadavaks ja kasutatavaks',
+    'rakendustarkvara': 'programmid, millega saab inimene arvutis midagi kasulikku teha',
+    'BIOS': 'osa süsteemist, mis on vajalik sisendi ja väljundi jaoks',
+    'süsteemi tarkvara': 'kõik programmid, mis tagavad, et arvuti ja tema lisaseadmed suudaksid koos funktsioneerida'
+};
 
+// Функция для отображения значения выбранного слова
+function showWordMeaning() {
+    const wordSelect = document.getElementById('word-select');
+    const wordMeaning = document.getElementById('word-meaning');
+    const selectedWord = wordSelect.value;
+
+    if (selectedWord) {
+        wordMeaning.textContent = wordMeanings[selectedWord];
+    } else {
+        wordMeaning.textContent = '';
+    }
+}
 
 const synad = [
     'teostus', 'algoritm', 'kavand', 'kasutajaliides', 'mudel', 'andmebaasi skeem',
