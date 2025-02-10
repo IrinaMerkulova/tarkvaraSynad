@@ -64,3 +64,30 @@ button {
     color: red;
     font-weight: bold;
 }
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: MintCream;
+    cursor: pointer;
+}
+select:focus {
+    outline: none;
+    border-color: MintCream;
+}
+#selgitusTekst {
+    margin-top: 20px;
+    font-size: 16px;
+    color: black;
+    background-color: MintCream;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+}
+#selgitusTekst:empty {
+    display: none;
+}
