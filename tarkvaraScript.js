@@ -79,3 +79,17 @@ function randomSyna() {
 
     document.getElementById("vastus").innerHTML = "";
 }
+
+function checkTranslation() {
+    const userInput = document.getElementById("kontroll").value.trim().toLowerCase();
+
+    if (currentWordIndex !== -1) {
+        const correctTranslation = ruSynad[currentWordIndex].toLowerCase();
+
+        if (userInput === correctTranslation) {
+            document.getElementById("vastus").innerHTML = "<span style='color: green;'>Õige vastus!</span>";
+        } else {
+            document.getElementById("vastus").innerHTML = "<span style='color: red;'>Vale vastus. Proovi uuesti.</span>";
+        }
+    }
+}
