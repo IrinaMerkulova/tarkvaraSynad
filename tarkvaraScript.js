@@ -1,3 +1,19 @@
+// Funktsioon tõlke kontrollimiseks
+function kontrolliSyna() {
+    const kasutajaSona = document.getElementById("kontroll").value.trim().toLowerCase(); // Kasutaja sisestatud sõna
+    const syna = document.getElementById("random-syna").innerHTML; // Juhuslik sõna
+    const juhuslikSyna = synad.indexOf(syna); // Leiame juhusliku sõna indeksi
+
+    const õigeVastus = veneSynad[juhuslikSyna]; // Õige tõlge vene keeles
+
+    // Kui kasutaja sisestatud sõna on õige, kuvatakse vastus
+    if (kasutajaSona === õigeVastus.toLowerCase()) {
+        document.getElementById("vastus").innerHTML = "Õige vastus!"; // Õige vastus
+    } else {
+        document.getElementById("vastus").innerHTML = `Vale vastus! Õige vastus on: ${õigeVastus}`; // Vale vastus
+    }
+}
+
 function randomSyna(){
 // esimese masiivi loomine
 
