@@ -91,5 +91,13 @@ function randomSyna(){
             document.getElementById("result").textContent = "Palun sisestage tõlge";
             return;
         }
+        //Hangi õige tõlge ja võrdle
+        const correctTranslation = synadvene[currentIndex].toLowerCase();
+
+        if (userInput === correctTranslation) {
+            document.getElementById("result").textContent = "Nii ongi!";
+        } else {
+            document.getElementById("result").textContent = "Vale! Õige tõlge on: " + synadvene[currentIndex];
+        }
     }
 }
