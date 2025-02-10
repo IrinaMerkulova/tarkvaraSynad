@@ -84,7 +84,14 @@ function synadeTolge() {
     const userInput = document.getElementById("kontroll").value.trim().toLowerCase(); // Ввод пользователя
     const answerDiv = document.getElementById("vastus");
 
-
+    // Проверяем, правильный ли перевод
+    if (userInput === tolgitudSyna.toLowerCase()) {
+        answerDiv.innerHTML = "Õige tõlge!";
+        answerDiv.style.color = "green";
+    } else {
+        answerDiv.innerHTML = "Vale tõlge, proovige uuesti!";
+        answerDiv.style.color = "red";
+    }
 }
 
 // Добавляем событие для проверки на ввод текста
