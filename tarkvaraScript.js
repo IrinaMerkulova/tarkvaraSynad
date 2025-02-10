@@ -73,7 +73,6 @@ function randomSyna() {
     valitudIndex = Math.floor(Math.random() * synad.length);
     document.getElementById("random-syna").textContent = synad[valitudIndex];
 
-    // Очищаем поле ввода и сообщение
     document.getElementById("kontroll").value = "";
     document.getElementById("vastus").textContent = "";
 }
@@ -99,4 +98,33 @@ function kontrolliVastus() {
     }
 }
 
+function randomSynaRu() {
+    valitudIndexRu = Math.floor(Math.random() * venesynad.length);
+    let sõna = venesynad[valitudIndexRu];
 
+    document.getElementById("random-syna-ru").textContent = sõna;
+
+    document.getElementById("kontrollru").value = "";
+    document.getElementById("vastusru").textContent = "";
+}
+
+function kontrolliVastusRu() {
+    if (valitudIndexRu === null) {
+        document.getElementById("vastusru").textContent = "Palun vali kõigepealt sõna!";
+        document.getElementById("vastusru").style.color = "black";
+        return;
+    }
+
+    const kasutajaVastus = document.getElementById("kontrollru").value.trim().toLowerCase();
+    const õigeVastus = synad[valitudIndexRu].toLowerCase();
+
+    let vastusElement = document.getElementById("vastusru");
+
+    if (kasutajaVastus === õigeVastus) {
+        vastusElement.textContent = "Õige!";
+        vastusElement.style.color = "green";
+    } else {
+        vastusElement.textContent = "Vale, proovi uuesti!";
+        vastusElement.style.color = "red";
+    }
+}

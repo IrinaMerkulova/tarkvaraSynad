@@ -7,24 +7,30 @@
 </head>
 <body>
 <!--TAR sõnad on vaja õppida!-->
-<h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll">
-<input type="button" value="Kontrolli" onclick="kontrolliVastus()">
-<div id="vastus"></div>
-
-<h2>Tarkvara vene sõnad</h2>
-<input type="button" value="juhuslik sõna" onclick="randomSynaRu()">
-<br><br>
-<div id="random-syna-ru"></div>
-<label for="kontroll-ru" id="kontroll-label-ru">Kirjuta sõna eesti keeles</label>
-<input type="text" id="kontroll-ru" oninput="kontrolliVastusRu()">
-<button onclick="kontrolliVastusRu()">kontrolli</button>
-<div id="vastus-ru"></div>
-
+<table border="1">
+    <tr>
+        <td>
+            <h2>Tarkvara sõnad</h2>
+            <input type="button" value="juhuslik sõna" onclick="randomSyna()">
+            <br>
+            <br>
+            <div id="random-syna"></div>
+            <label for="kontroll">Kirjuta sõna vene keeles</label>
+            <input type="text" id="kontroll">
+            <input type="button" value="Kontrolli" onclick="kontrolliVastus()">
+            <div id="vastus"></div>
+        </td>
+        <td>
+            <h2>Tarkvara vene sõnad</h2>
+            <input type="button" value="juhuslik sõna" onclick="randomSynaRu()">
+            <br><br>
+            <div id="random-syna-ru"></div>
+            <label for="kontrollru" id="kontroll-label-ru">Kirjuta sõna eesti keeles</label>
+            <input type="text" id="kontrollru" oninput="kontrolliVastusRu()">
+            <button onclick="kontrolliVastusRu()">kontrolli</button>
+            <div id="vastusru"></div>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
