@@ -44,7 +44,7 @@ function randomSyna(){
     document.getElementById("random-syna").innerHTML = syna;
     document.getElementById("kontroll").setAttribute("data-correct", synad[syna]);
 }
-function kontrolliToiget(){
+function kontrolliToigett(){
     const kasutajaSisestus = document.getElementById("kontroll").value.trim().toLowerCase();
     const oigeVastus = document.getElementById("kontroll").getAttribute("data-correct").toLowerCase();
     const vastusElement = document.getElementById("vastus");
