@@ -87,3 +87,24 @@ function inputSyna() {
         document.getElementById("vastus").innerHTML = "Слово не найдено.";
     }
 }
+
+function checkTranslation() {
+    const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+    const correctTranslation = synadMap[userInput.toLowerCase()];
+    const userAnswer = document.getElementById("vastus").innerText.trim();
+
+    if (correctTranslation) {
+        if (userAnswer === `Перевод: ${correctTranslation}`) {
+            alert("Правильно!");
+        } else {
+            alert("Неправильно! Попробуйте еще раз.");
+        }
+    } else {
+        alert("Слово не найдено. Проверьте правильность ввода.");
+    }
+}
+
+function clearInput() {
+    document.getElementById("userInput").value = '';
+    document.getElementById("vastus").innerHTML = '';
+}
