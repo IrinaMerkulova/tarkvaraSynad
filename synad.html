@@ -3,36 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
+    <link rel="stylesheet" href="style.css">
     <script src="tarkvaraScript.js"></script>
 </head>
 <body>
-<!-- Tarkvara sõnad on vaja pähe õppida!-->
 <h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
+
 <table border="1">
     <tr>
-        <th>Эстонское слово</th>
-        <th>Русское слово</th>
+        <th>Eesti sõna</th>
+        <th>Vene tõlge</th>
     </tr>
     <tr>
         <td id="eestikeelneSyna"></td>
-        <td id="venekeelneSyna"></td>
+        <td><input type="text" id="kontrollEesti" oninput="checkEestiTranslation()"></td>
     </tr>
     <tr>
-        <td><input type="text" id="kontrollEesti" placeholder="Введите перевод на русский"></td>
-        <td><input type="text" id="kontrollVenekeelne" placeholder="Введите перевод на эстонский"></td>
+        <td colspan="2"><input type="button" value="rnd eest" onclick="generateEestiSyna()"></td>
     </tr>
 </table>
 
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="synadeTolge()">
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>Vene sõna</th>
+        <th>Eesti tõlge</th>
+    </tr>
+    <tr>
+        <td id="venekeelneSyna"></td>
+        <td><input type="text" id="kontrollVenekeelne" oninput="checkVenekeelneTranslation()"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" value="rnd vene" onclick="generateVenekeelneSyna()"></td>
+    </tr>
+</table>
+
+<br><br>
 <div id="vastus"></div>
 
+<h2>Valige sõna ja vaadake kirjeldust</h2>
+<br>
+<select id="wordSelect" onchange="showDescription()">
+    <option value="">Valige sõna...</option>
+    <option value="Andmetöötlus">Andmetöötlus</option>
+    <option value="Andmetöötlussüsteem">Andmetöötlussüsteem</option>
+    <option value="Riistvara">Riistvara</option>
+    <option value="Püsivara">Püsivara</option>
+    <option value="Operatsioonisüsteem">Operatsioonisüsteem</option>
+    <option value="Rakendustarkvara">Rakendustarkvara</option>
+    <option value="Süsteemi konfiguratsioonifailid">Süsteemi konfiguratsioonifailid</option>
+    <option value="Kasutaja andmed">Kasutaja andmed</option>
+    <option value="BIOS">BIOS</option>
+    <option value="Draiver">Draiver</option>
+</select>
+
+<div id="wordDescription" style="margin-top: 20px;">
+</div>
 
 </body>
 </html>

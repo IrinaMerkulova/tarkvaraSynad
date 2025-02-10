@@ -1,0 +1,86 @@
+body {
+    background: linear-gradient(to bottom, #ffffff 0%, #ffccff 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Vibur', cursive;
+    font-family: 'Abel', sans-serif;
+    opacity: .95;
+}
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+table th {
+    background: #ffccff;
+    color: black;;
+    text-transform: uppercase;
+
+}
+
+table tr:nth-child(even) {
+    background-color: MintCream;
+    color: black;
+}
+
+table tr:hover {
+    background: linear-gradient(to bottom, #cc99ff 0%, #0033cc 100%);
+}
+table td a {
+    text-decoration: none;
+    color:#cc99ff;
+    font-weight: bold;
+}
+table td a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+
+tr{
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #cc99ff;
+    color: black;
+}
+
+
+#wordSelect {
+    background: linear-gradient(to bottom, #cc99ff 0%, #ffccff 100%);
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 50%; /* You can adjust the width as needed */
+    padding: 10px;
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #ffccff;
+    transition: all 0.3s ease;
+}
+
+#wordSelect:hover {
+    background: linear-gradient(to bottom, #ffccff 0%, #cc99ff 100%);
+    border: 2px solid #cc99ff;
+}
+
+#wordSelect:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 51, 204, 0.7);
+}
+
+H1, H2 {
+    text-align: center;
+}
+
+.onclick {
+    background: linear-gradient(to bottom, #cc99ff 0%, #0033cc 100%);
+}
