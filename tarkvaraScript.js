@@ -77,7 +77,8 @@ function randomSyna(){
     tolgitudSyna = tolgitudSynad[juhuslikSyna]; // Запоминаем правильный перевод
 
     // Добавляем выбранное слово на страницу HTML
-    document.getElementById("random-syna").innerHTML = syna;
+    document.getElementById("eestikeelneSyna").innerHTML = syna;
+    document.getElementById("venekeelneSyna").innerHTML = tolgitudSynad[juhuslikSyna];
 }
 
 function synadeTolge() {

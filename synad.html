@@ -11,6 +11,23 @@
 <input type="button" value="juhuslik sõna" onclick="randomSyna()">
 <br>
 <br>
+<table border="1">
+    <tr>
+        <th>Эстонское слово</th>
+        <th>Русское слово</th>
+    </tr>
+    <tr>
+        <td id="eestikeelneSyna"></td>
+        <td id="venekeelneSyna"></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="kontrollEesti" placeholder="Введите перевод на русский"></td>
+        <td><input type="text" id="kontrollVenekeelne" placeholder="Введите перевод на эстонский"></td>
+    </tr>
+</table>
+
+<br>
+<br>
 <div id="random-syna"></div>
 <label for="kontroll">Kirjuta sõna vene keeles</label>
 <input type="text" id="kontroll" oninput="synadeTolge()">
