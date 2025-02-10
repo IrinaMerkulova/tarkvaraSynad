@@ -42,7 +42,7 @@
     <tr>
         <td>
             <label for="synaddropdownlist">Vali sõna:</label>
-            <select id="synaddropdownlist" onchange="">
+            <select id="synaddropdownlist" onchange="naitaselgitus()">
                 <option value="">Vali...</option>
                 <option value="pusivara">Püsivara</option>
                 <option value="riistvara">Riistvara</option>
@@ -51,15 +51,17 @@
                 <option value="andmetootlussusteem">Andmetöötlussüsteem</option>
                 <option value="rakendustarkvara">Rakendustarkvara </option>
                 <option value="susteemi_tarkvara">Süsteemi tarkvara</option>
-                <option value="Andmetootlus">Andmetöötlus</option>
-                <option value="Operatsioonisusteem">Operatsioonisüsteem</option>
+                <option value="andmetootlus">Andmetöötlus</option>
+                <option value="operatsioonisusteem">Operatsioonisüsteem</option>
                 <option value="susteemi_konfiguratsioonifailid">Süsteemi konfiguratsioonifailid</option>
                 <option value="kasutaja_andmed">Kasutaja andmed</option>
             </select>
         </td>
     </tr>
     <tr>
-
+        <td>
+            <p id="selgitusTekst"></p>
+        </td>
     </tr>
 </table>
 </body>
