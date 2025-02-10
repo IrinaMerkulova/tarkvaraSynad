@@ -6,7 +6,7 @@
     <script src="tarkvaraScript.js"></script>
 </head>
 <-- TA sõnad on vaja pähe õppida-->
-<body>
+<body onload="uuendaTabel()">
 <h1>Tarkvara sõnad</h1>
 <input type="button" value="juhuslik sõna" onclick="randomSyna()">
 <br>
@@ -15,5 +15,25 @@
 <label for="kontroll">Kirjuta sõna vene keeles</label>
 <input type="text" id="kontroll" oninput="kontrollSyna()">
 <div id="vastus"></div>
+<h1>Sõnad tabelis</h1>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Eesti</th>
+        <th>Vene</th>
+    </tr>
+    <tr>
+        <td>
+            <div id="est-word"></div>
+            <input type="text" id="est-input" oninput="kontrollEesti()">
+            <div id="vastus2"></div>
+        </td>
+        <td>
+            <div id="rus-word"></div>
+            <input type="text" id="rus-input" oninput="kontrollVene()">
+            <div id="vastus3"></div>
+        </td>
+    </tr>
+</table>
+<input type="button" value="Uuenda sõnad" onclick="uuendaTabel()">
 </body>
 </html>
