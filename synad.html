@@ -8,11 +8,17 @@
 </head>
 <body>
 <h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
+<input type="button" value="juhuslik sõna (esimesest suunast)" onclick="randomSyna()">
+<input type="button" value="juhuslik sõna (teise suunaga)" onclick="randomSynaReverse()">
 <br><br>
 <div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
+<label for="kontroll">Kirjuta sõna vene keeles (sõna eesti keeles):</label>
 <input type="text" id="kontroll" oninput="checkAnswer()">
 <div id="vastus"></div>
+<br><br>
+<div id="random-syna-reverse"></div>
+<label for="kontroll-reverse">Kirjuta sõna eesti keeles (sõna vene keeles):</label>
+<input type="text" id="kontroll-reverse" oninput="checkAnswerReverse()">
+<div id="vastus-reverse"></div>
 </body>
 </html>
