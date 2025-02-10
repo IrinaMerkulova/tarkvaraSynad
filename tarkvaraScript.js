@@ -1,3 +1,4 @@
+// Define arrays for Estonian words and their Russian translations
 const synad = [
     'teostus',
     'algoritm',
@@ -32,79 +33,63 @@ const synad = [
     'valideerimine'
 ];
 
-const veneSynad = [
-    'реализация',
+const ruSynad = [
+    'исполнение',
     'алгоритм',
-    'проект',
-    'интерфейс пользователя',
-    'модель',
+    'проекта',
+    'интерфейс',
+    'модели',
     'схема базы данных',
     'стандарт',
     'цикл',
-    'обработка данных',
-    'структура данных',
-    'среда разработки',
-    'инструмент управления проектом',
-    'проектирование',
+    'обработки данных',
+    'структуры данных',
+    'развивающая среда',
+    'инструмент управления проектами',
+    'планирования',
     'итерация',
-    'исправление',
-    'исправление',
+    'коррекции',
+    'ремонта',
     'водопадная модель',
-    'гибкая модель',
+    'агильная модель',
     'спиральная модель',
     'инкрементальная модель',
-    'требования',
+    'требований',
     'реализация',
-    'тестирование',
+    'тестирования',
     'интеграция',
-    'использование',
+    'использования',
     'обслуживание',
     'преимущества',
-    'недостатки',
+    'отсутствия',
     'жизненный цикл',
-    'разработка',
+    'разработки',
     'валидация'
 ];
 
-const synadMap = synad.reduce((acc, word, index) => {
-    acc[word] = veneSynad[index];
-    return acc;
-}, {});
+
+let currentWordIndex = -1;
 
 function randomSyna() {
-    const juhuslikSyna = Math.floor(Math.random() * synad.length);
-    const syna = synad[juhuslikSyna];
+    currentWordIndex = Math.floor(Math.random() * synad.length);
+
+    const syna = synad[currentWordIndex];
+
     document.getElementById("random-syna").innerHTML = syna;
-}
 
-function inputSyna() {
-    const userInput = document.getElementById("userInput").value.trim().toLowerCase();
-    const translation = synadMap[userInput.toLowerCase()];
-
-    if (translation) {
-        document.getElementById("vastus").innerHTML = `Перевод: ${translation}`;
-    } else {
-        document.getElementById("vastus").innerHTML = "Слово не найдено.";
-    }
+    document.getElementById("vastus").innerHTML = "";
 }
 
 function checkTranslation() {
-    const userInput = document.getElementById("userInput").value.trim().toLowerCase();
-    const correctTranslation = synadMap[userInput.toLowerCase()];
-    const userAnswer = document.getElementById("vastus").innerText.trim();
+    const userInput = document.getElementById("kontroll").value.trim().toLowerCase();
 
-    if (correctTranslation) {
-        if (userAnswer === `Перевод: ${correctTranslation}`) {
-            alert("Правильно!");
+    if (currentWordIndex !== -1) {
+        const correctTranslation = ruSynad[currentWordIndex].toLowerCase();
+
+        if (userInput === correctTranslation) {
+            document.getElementById("vastus").innerHTML = "<span style='color: green;'>Õige vastus!</span>";
         } else {
-            alert("Неправильно! Попробуйте еще раз.");
+            document.getElementById("vastus").innerHTML = "<span style='color: red;'>Vale vastus. Proovi uuesti.</span>";
         }
-    } else {
-        alert("Слово не найдено. Проверьте правильность ввода.");
     }
-}
-
-function clearInput() {
-    document.getElementById("userInput").value = '';
-    document.getElementById("vastus").innerHTML = '';
 }
