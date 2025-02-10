@@ -64,16 +64,35 @@ const Venesynad = [
     'разработка',
     'валидация'
 ];
-function randomSyna(){
+let currentWord = "";
+
+function randomSyna() {
 // esimese masiivi loomine
 
 
     //random sõna - arv
-    const juhuslikSyna=Math.floor(Math.random()*synad.length);
+    const juhuslikSyna = Math.floor(Math.random() * synad.length);
 
     //võtame random sõna massivist
-    const syna=synad[juhuslikSyna];
+    currentWord = synad[juhuslikSyna];
 
     //lisame html-lehele
-    document.getElementById("random-syna").innerHTML=syna;
+    document.getElementById("random-syna").innerHTML = currentWord ;
+    document.getElementById("kontroll").value = "";
+    document.getElementById("vastus").innerHTML = "";
 }
+function check() {
+    const userInput = document.getElementById('kontroll').value.trim();
+    const index = synad.indexOf(currentWord);
+
+    if (index !== -1) {
+        if (userInput.toLowerCase() === Venesynad[index].toLowerCase()) {
+            document.getElementById("vastus").innerHTML = "Õige vastus";
+            document.getElementById("vastus").style.color = "green";
+        } else {
+            document.getElementById("vastus").innerHTML = "Vale vastus. õige vastus on " + Venesynad[index];
+            document.getElementById("vastus").style.color = "red";
+        }
+    }
+}
+
