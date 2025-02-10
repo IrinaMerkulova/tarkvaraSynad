@@ -1,4 +1,3 @@
-// Define arrays for Estonian words and their Russian translations
 const synad = [
     'teostus',
     'algoritm',
@@ -80,6 +79,16 @@ function randomSyna() {
     document.getElementById("vastus").innerHTML = "";
 }
 
+function ee_randomSyna() {
+    currentWordIndex = Math.floor(Math.random() * ruSynad.length);
+
+    const ruSyna = ruSynad[currentWordIndex];
+
+    document.getElementById("ee_random-syna").innerHTML = ruSyna;
+
+    document.getElementById("ee_vastus").innerHTML = "";
+}
+
 function checkTranslation() {
     const userInput = document.getElementById("kontroll").value.trim().toLowerCase();
 
@@ -90,6 +99,20 @@ function checkTranslation() {
             document.getElementById("vastus").innerHTML = "<span style='color: green;'>Õige vastus!</span>";
         } else {
             document.getElementById("vastus").innerHTML = "<span style='color: red;'>Vale vastus. Proovi uuesti.</span>";
+        }
+    }
+}
+
+function ee_checkTranslation() {
+    const userInput = document.getElementById("ee_kontroll").value.trim().toLowerCase();
+
+    if (currentWordIndex !== -1) {
+        const correctTranslation = synad[currentWordIndex].toLowerCase();
+
+        if (userInput === correctTranslation) {
+            document.getElementById("ee_vastus").innerHTML = "<span style='color: green;'>Õige vastus!</span>";
+        } else {
+            document.getElementById("ee_vastus").innerHTML = "<span style='color: red;'>Vale vastus. Proovi uuesti.</span>";
         }
     }
 }
