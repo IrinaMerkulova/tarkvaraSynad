@@ -1,3 +1,6 @@
+
+let valitudIndex = null;
+
 function randomSyna(){
 // esimese masiivi loomine
 
@@ -78,3 +81,23 @@ function randomSyna(){
     document.getElementById("random-syna").innerHTML=syna;
 }
 
+function kontrolliVastus() {
+    if (valitudIndex === null) {
+        document.getElementById("vastus").textContent = "Palun vali kõigepealt sõna!";
+        document.getElementById("vastus").style.color = "black";
+        return;
+    }
+
+    let kasutajaVastus = document.getElementById("kontroll").value.trim().toLowerCase();
+    let õigeVastus = venesynad[valitudIndex].toLowerCase();
+
+    let vastusElement = document.getElementById("vastus");
+
+    if (kasutajaVastus === õigeVastus) {
+        vastusElement.textContent = "Õige ";
+        vastusElement.style.color = "green";
+    } else {
+        vastusElement.textContent = "Vale, proovi uuesti!";
+        vastusElement.style.color = "red";
+    }
+}
