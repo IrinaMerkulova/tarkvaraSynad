@@ -86,7 +86,7 @@ function synadeT() {
     const userInput = document.getElementById("kontroll").value.trim().toLowerCase(); // Ввод пользователя
     const answerDiv = document.getElementById("vastus");
 
-    // Проверяем, правильный ли перевод
+    // Проверяем правильность перевода
     if (userInput === tolgiSyna.toLowerCase()) {
         answerDiv.innerHTML = "Õige tõlge!";
         answerDiv.style.color = "green";
@@ -95,3 +95,6 @@ function synadeT() {
         answerDiv.style.color = "red";
     }
 }
+
+// Добавляем событие для проверки на ввод текста
+document.getElementById("kontroll").addEventListener('input', synadeT);

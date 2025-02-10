@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="et">
+<!-- sõnad !-->
 <head>
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
     <script src="tarkvaraScript.js"></script>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-<!--tarlvara sõnad-->
 <h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="">
-<div id="vastus"></div>
+<table>
+    <tr>
+        <td>
+            <h2>Eesti sõnad</h2>
+            <div id="random-syna"></div>
+            <input type="button" class="btn" value="juhuslik sõna" onclick="randomSyna()">
+            <br>
+            <label for="kontroll">Kirjuta sõna vene keele</label>
+            <input type="text" id="kontroll">
+            <button onclick="check()">kontrollige</button>
+            <div id="vastus"></div></td>
 
+        <td>
+            <h2>Vene sõnad</h2>
+            <div id="random-venesyna"></div>
+            <input type="button" class="btn" value="juhuslik sõna" onclick="randomVeneSyna()">
+            <br>
+            <label for="kontrollVene">Kirjuta sõna eesti keele</label>
+            <input type="text" id="kontrollVene">
+            <button onclick="checkVene()">kontrollige</button>
+            <div id="venevastus"></div></td>
+        //Функции для проверки перевода введённого слова. Они сравнивают введённое значение с правильным переводом.
+    </tr>
+</table>
 
+<br><br>
 </body>
 </html>
