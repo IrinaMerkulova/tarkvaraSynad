@@ -7,10 +7,11 @@
 </head>
 <body>
 <!--TAR sõnad on vaja õppida!-->
+<h1>Tarkvara sõnad</h1>
 <table border="1">
     <tr>
         <td>
-            <h2>Tarkvara sõnad</h2>
+            <h2>eesti - vene</h2>
             <input type="button" value="juhuslik sõna" onclick="randomSyna()">
             <br>
             <br>
@@ -21,7 +22,7 @@
             <div id="vastus"></div>
         </td>
         <td>
-            <h2>Tarkvara vene sõnad</h2>
+            <h2>vene - eesti </h2>
             <input type="button" value="juhuslik sõna" onclick="randomSynaRu()">
             <br><br>
             <div id="random-syna-ru"></div>
@@ -32,5 +33,12 @@
         </td>
     </tr>
 </table>
+
+<h2>Vali sõna</h2>
+<select id="word-select" onchange="showWordDescription()">
+    <option value="">Tarkvara sõnad</option>
+</select>
+
+<div id="word-description"></div>
 </body>
 </html>

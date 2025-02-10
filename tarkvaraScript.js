@@ -1,5 +1,5 @@
-
 let valitudIndex = null;
+let valitudIndexRu = null;
 
     const synad=[
         'teostus',
@@ -69,6 +69,14 @@ let valitudIndex = null;
         'проверка'
     ];
 
+    const wordDescriptions = {
+        'Andmetöötlus' : 'on andmete manipuleerimine arvuti abil. See tegevus sisaldab toorandmete teisendamist masin-loetavale kujule, nende liikumist läbi protsessori ja mälu väljundseadmetesse ning väljundi vormindamist ja teisendamist sobivale kujule. Üldisemalt nimetatakse andmetöötluseks alati arvutil toimuvat protsessi, kui see sisaldab nimetatud tegevusi. Andmetöötlust võib käsitleda ka kitsamalt kui mõne organisatsiooni või äri tegevuseks vajalike andmete töötlemist.',
+        'Andmetöötlussüsteem' : '(data processing system) koosneb üldisemalt riistvarast, tarkvarast ja inimestest. Andmetöötlussüsteem on süsteem, mis teeb sisendandmetega mitmesuguseid matemaatilisi operatsioone, eesmärgiga muuta need informatsiooniks, kasutajale vajalikule väljundandmete kujule. Viimane võib olla nii heli, video, graafika, arvude kui ka teksti kujul.',
+        'Riistvara' : 'on üldisem mõiste tähistamaks igasuguseid tehnoloogilisi seadmeid (tooteid). Antud kontekstis peetakse silmas ennekõike arvuti riistvara. Viimase moodustavad kõik arvuti füüsilised komponendid: kuvar, protsessor, mälu, kettaseadmed, modem, printer, klaviatuur, hiir jms (vt moodul C). Arvutiriistvara on vajalik nii andmete sisestamisel, töötlemisel, salvestamisel kui ka töötlemise tulemuste esitamisel.',
+        'Püsivara' : ' - talitluslikult põhimälust sõltumatul viisil püsimällu (ROM) salvestatud käsu- ja andmekogum (programm ja vastav andmestik). Püsivara on reeglina seotud mõne riistvara komponendiga ning tihti ei ole teda võimalik muuta riistvara komponenti asendamata või vähemalt ei saa seda muuta iga seadme kasutaja. BIOS (basic input/output system) on üks püsivara näiteid. BIOS on kirjutatud arvuti ROM-i ja sisaldab instruktsioone klaviatuuri sisendi ja ekraaniväljundi tarbeks.',
+        'Operatsioonisüsteem' : 'on tähtsaim süsteemitarkvara hulka kuuluv programm, mis juhib arvuti tööd, haldab riistvararessursse, suhtleb perifeerseadmetega ja tagab rakendusprogrammide töötamise. Kasutajatel on võimalik suhelda vahetult operatsioonisüsteemiga, kasutades selleks käsukeelt või graafilist kasutajaliidest. Operatsioonisüsteemi ülesannete hulka kuulub ressursside jaotamine erinevate rakenduste vahel, mälu ühiskasutuse juhtimine, sisend- ja väljundseadmetega suhtlemine, kasutajate haldus jne.'
+    }
+
 function randomSyna() {
     valitudIndex = Math.floor(Math.random() * synad.length);
     document.getElementById("random-syna").textContent = synad[valitudIndex];
@@ -128,3 +136,30 @@ function kontrolliVastusRu() {
         vastusElement.style.color = "red";
     }
 }
+
+function updateWordSelect() {
+    const wordSelect = document.getElementById("word-select");
+
+    wordSelect.innerHTML = '<option value="">Выберите слово</option>';
+
+    for (let word in wordDescriptions) {
+        let option = document.createElement("option");
+        option.value = word;
+        option.textContent = word;
+        wordSelect.appendChild(option);
+    }
+}
+
+function showWordDescription() {
+    const selectedWord = document.getElementById("word-select").value;
+    const descriptionDiv = document.getElementById("word-description");
+
+    if (selectedWord) {
+        descriptionDiv.textContent = wordDescriptions[selectedWord];
+    } else {
+        descriptionDiv.textContent = "";
+    }
+}
+
+updateWordSelect();
+
