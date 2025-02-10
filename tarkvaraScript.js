@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function randomSyna(){
 // esimese masiivi loomine
 
+    // Kommit
     const synad=[
         'teostus',
         'algoritm',
