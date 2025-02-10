@@ -119,3 +119,33 @@ function RUcheckTranslation() {
         }
     }
 }
+
+function bebebe(){
+    let select = document.getElementById("lalala").value;
+    let div = document.createElement("div");
+
+    if (select.value === "")
+    {
+     div.innerHTML = "Vali midagi"
+    }
+    if (select.value === "andmetöötlussüsteem")
+    {
+        div.innerHTML = ""
+    }
+    if (select.value === "draiver")
+    {
+        div.innerHTML = ""
+    }
+    if (select.value === "rakendustarkvara")
+    {
+        div.innerHTML = ""
+    }
+    if (select.value === "BIOS")
+    {
+        div.innerHTML = "BIOS"
+    }
+    if (select.value === "süsteemi tarkvara")
+    {
+        div.innerHTML = "Vali midagi"
+    }
+}
