@@ -66,7 +66,6 @@ function randomSyna(keel){
     document.getElementById(`${keel}-syna`).innerHTML = `Juhuslik ${keel === "eesti" ? "vene" : "eesti"} sõna: <strong>${currentSynad[keel]["currentSyna"]}</strong>`;
 }
 function checkSyna(keel){
-
     const vastusContainer = document.getElementById(`${keel}-vastus`);
     const input = document.getElementById(`${keel}-kontroll`);
     if(input.value === ""){
@@ -75,10 +74,8 @@ function checkSyna(keel){
     }
 
     let access = true;
-    console.log(currentSynad[keel].tolge, input.value, "oook", currentSynad[keel].tolge !== input.value)
     if(currentSynad[keel].tolge !== input.value){
         for(let i = 0; i < input.value.length; i++){
-            console.log(input.value[i], currentSynad[keel].tolge[i])
             if(input.value[i] === currentSynad[keel].tolge[i]){
                 continue;
             }
@@ -95,8 +92,4 @@ function checkSyna(keel){
     }
     vastusContainer.innerText = access ? "" : "Vale";
     vastusContainer.style.color = access ? "" : "red";
-
-
-
-
 }
