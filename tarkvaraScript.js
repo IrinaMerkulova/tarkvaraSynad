@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("kontroll").addEventListener("input", kontrolliToiget);
+});
+
 function randomSyna(){
 // esimese masiivi loomine
 
