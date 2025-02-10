@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5ce8d2e-36e4-4691-bf12-9a1de7a14bd7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synad.html" beforeDir="false" afterPath="$PROJECT_DIR$/synad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tarkvaraScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/tarkvaraScript.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,15 +20,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;VsevolodTsarev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/opilane/Desktop/tarkvaraSynad&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "VsevolodTsarev",
+    "last_opened_file_path": "C:/Users/opilane/Desktop/tarkvaraSynad",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -49,6 +50,7 @@
       <updated>1739173371213</updated>
       <workItem from="1739173373523" duration="222000" />
       <workItem from="1739173597130" duration="214000" />
+      <workItem from="1739173813681" duration="522000" />
     </task>
     <servers />
   </component>
