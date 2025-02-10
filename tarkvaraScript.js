@@ -74,10 +74,17 @@ function randomSyna(){
     ];
 
     //random sõna - arv
-    const juhuslikSyna=Math.floor(Math.random()*synad.length);
-
     //võtame random sõna massivist
-    const syna=synad[juhuslikSyna];
+    function randomSyna() {
+        const juhuslikIndex = Math.floor(Math.random() *  synad.length);
+        const syna =  synad[juhuslikIndex];
+        const toigeTolge = synadTolge[juhuslikIndex];
+
+        document.getElementById("random-syna").innerHTML = syna;
+        document.getElementById("kontroll").value = "";
+        document.getElementById("kontroll").setAttribute("data-correct", toigeTolge);
+        document.getElementById("vastus").innerHTML = "";
+    }
 
     //lisame html-lehele
     document.getElementById("random-syna").innerHTML=syna;
