@@ -77,23 +77,25 @@ function randomSyna(){
     const translationIndex = synad.indexOf(syna);
     const translatedWords = veneSynad[translationIndex];
 
+
+    document.getElementById("random-syna").innerHTML = `Слово: ${syna}<br>Перевод: ${translatedWord}`;
+
     //lisame html-lehele
-    document.getElementById("random-syna").innerHTML=syna;
+    document.getElementById("kontroll").setAttribute("data-translation", translatedWord);
 }
 
 
 function checkTranslation() {
-    const userInput = document.getElementById('kontroll').value;
-    const correctTranslation = document.getElementById('kontroll').getAttribute('data-translation');
+    const userInput = document.getElementById("kontroll").value;
+    const correctTranslation = document.getElementById("kontroll").getAttribute("data-translation");
 
-    const responseElement = document.getElementById('vastus');
-
+    const responseElement = document.getElementById("vastus");
 
     if (userInput.trim().toLowerCase() === correctTranslation.toLowerCase()) {
-        responseElement.innerHTML = "Õige!";
+        responseElement.innerHTML = "Правильно!";
         responseElement.style.color = "green";
     } else {
-        responseElement.innerHTML = "Vale!";
+        responseElement.innerHTML = "Неправильно!";
         responseElement.style.color = "red";
     }
 }
