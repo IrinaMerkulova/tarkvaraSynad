@@ -60,3 +60,4 @@ function kontrolliTolgeRU() {
         document.getElementById("vastus-ru").style.color = "red";
     }
 }
+

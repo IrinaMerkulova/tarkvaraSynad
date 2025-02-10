@@ -3,48 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
-    <script src="tarkvaraScript.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        td, th {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
-        }
-        button {
-            margin-top: 10px;
-        }
-    </style>
+    <script src="tarkvaraScript.js" defer></script>
 </head>
 <body>
 <h1>Tarkvara sõnad</h1>
-<table>
-    <tr>
-        <th>Eesti → Vene</th>
-        <th>Vene → Eesti</th>
-    </tr>
-    <tr>
-        <td>
-            <button onclick="randomSyna()">Juhuslik sõna</button>
-            <div id="random-syna-et"></div>
-            <label for="kontroll-et">Kirjuta sõna vene keeles</label>
-            <input type="text" id="kontroll-et">
-            <button onclick="kontrolliTolgeET()">Kontrolli</button>
-            <div id="vastus-et"></div>
-        </td>
-        <td>
-            <button onclick="randomSynaRU()">Juhuslik sõna</button>
-            <div id="random-syna-ru"></div>
-            <label for="kontroll-ru">Kirjuta sõna eesti keeles</label>
-            <input type="text" id="kontroll-ru">
-            <button onclick="kontrolliTolgeRU()">Kontrolli</button>
-            <div id="vastus-ru"></div>
-        </td>
-    </tr>
-</table>
+
+<!-- Перевод с эстонского на русский -->
+<div class="translation-block">
+    <h2>Eesti → Vene</h2>
+    <button onclick="randomSyna()">Juhuslik sõna</button>
+    <div id="random-syna-et"></div>
+    <label for="kontroll-et">Kirjuta sõna vene keeles</label>
+    <input type="text" id="kontroll-et">
+    <button onclick="kontrolliTolgeET()">Kontrolli</button>
+    <div id="vastus-et"></div>
+</div>
+
+<!-- Перевод с русского на эстонский -->
+<div class="translation-block">
+    <h2>Vene → Eesti</h2>
+    <button onclick="randomSynaRU()">Juhuslik sõna</button>
+    <div id="random-syna-ru"></div>
+    <label for="kontroll-ru">Kirjuta sõna eesti keeles</label>
+    <input type="text" id="kontroll-ru">
+    <button onclick="kontrolliTolgeRU()">Kontrolli</button>
+    <div id="vastus-ru"></div>
+</div>
+
+<!-- Mõisted -->
+<div class="mõisted-block">
+    <h2>Mõisted</h2>
+    <label for="mõisted-select">Vali mõiste:</label>
+    <select id="mõisted-select" onchange="showDefinition()">
+        <option value="">-- Vali mõiste --</option>
+        <option value="andmetöötlussüsteem">andmetöötlussüsteem</option>
+        <option value="draiver">draiver</option>
+        <option value="rakendustarkvara">rakendustarkvara</option>
+        <option value="BIOS">BIOS</option>
+        <option value="süsteemi tarkvara">süsteemi tarkvara</option>
+        <option value="Operatsioonisüsteem">Operatsioonisüsteem</option>
+        <option value="Rakendustarkvara">Rakendustarkvara</option>
+        <option value="Süsteemi konfiguratsioonifailid">Süsteemi konfiguratsioonifailid</option>
+        <option value="Kasutaja andmed">Kasutaja andmed</option>
+        <option value="Riistvara">Riistvara</option>
+    </select>
+    <div id="mõisted-description"></div>
+</div>
 </body>
 </html>
