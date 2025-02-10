@@ -81,23 +81,23 @@ function randomSyna(){
 
     function checkTranslation() {
         //Kontrollida, kas sõna on genereeritud
-        if (currentIndex === null) {
+        if (praeguneIndex === null) {
             document.getElementById("result").textContent = "Genereeri kõigepealt sõna!";
             return;
         }
         // kasutaja sisestatud tõlge
-        const userInput = document.getElementById("userTranslation").value.trim().toLowerCase();
-        if (userInput === "") {
+        const kasutajaInput = document.getElementById("userTranslation").value.trim().toLowerCase();
+        if (kasutajaInput === "") {
             document.getElementById("result").textContent = "Palun sisestage tõlge";
             return;
         }
         //Hangi õige tõlge ja võrdle
-        const correctTranslation = synadvene[currentIndex].toLowerCase();
+        const correctTranslation = synadvene[praeguneIndex].toLowerCase();
 
-        if (userInput === correctTranslation) {
+        if (kasutajaInput === correctTranslation) {
             document.getElementById("result").textContent = "Nii ongi!";
         } else {
-            document.getElementById("result").textContent = "Vale! Õige tõlge on: " + synadvene[currentIndex];
+            document.getElementById("result").textContent = "Vale! Õige tõlge on: " + synadvene[praeguneIndex];
         }
     }
 }
