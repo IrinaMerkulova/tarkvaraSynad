@@ -1,0 +1,14 @@
+table {
+    border: 1px solid black;
+    text-align: center;
+}
+ td {
+     border: 1px solid black;
+ }
+ td input{
+     margin: 10px;
+
+ }
+ h1{
+     text-align: center;
+ }

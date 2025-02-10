@@ -81,6 +81,17 @@ function randomSyna() {
     document.getElementById("kontroll").value = "";
     document.getElementById("vastus").innerHTML = "";
 }
+function randomVeneSyna() {
+    const juhuslikSyna = Math.floor(Math.random() * synad.length);
+
+    currentWord = Venesynad[juhuslikSyna];
+
+    //lisame html-lehele
+    document.getElementById("random-venesyna").innerHTML = currentWord ;
+    document.getElementById("kontrollVene").value = "";
+    document.getElementById("venevastus").innerHTML = "";
+}
+
 function check() {
     const userInput = document.getElementById('kontroll').value.trim();
     const index = synad.indexOf(currentWord);
@@ -92,6 +103,20 @@ function check() {
         } else {
             document.getElementById("vastus").innerHTML = "Vale vastus. õige vastus on " + Venesynad[index];
             document.getElementById("vastus").style.color = "red";
+        }
+    }
+}
+function checkVene() {
+    const userInput = document.getElementById('kontrollVene').value.trim();
+    const index = Venesynad.indexOf(currentWord);
+
+    if (index !== -1) {
+        if (userInput.toLowerCase() === synad[index].toLowerCase()) {
+            document.getElementById("venevastus").innerHTML = "Õige vastus";
+            document.getElementById("venevastus").style.color = "green";
+        } else {
+            document.getElementById("venevastus").innerHTML = "Vale vastus. õige vastus on " + synad[index];
+            document.getElementById("venevastus").style.color = "red";
         }
     }
 }
