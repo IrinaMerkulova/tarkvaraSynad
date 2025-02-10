@@ -76,7 +76,10 @@ function randomSyna(){
 
     //võtame random sõna massivist
     const syna=synad[juhuslikSyna];
+    tolgiSyna = tolgiSynad[juhuslikSyna]; // запоминание правильного перевода слова
 
     //lisame html-lehele
     document.getElementById("random-syna").innerHTML=syna;
 }
+
+
