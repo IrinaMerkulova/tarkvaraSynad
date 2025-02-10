@@ -8,22 +8,30 @@
 <body>
 <!-- TA sõnad on vaja pähe õppida-->
 <h1>Tarkvara sõnad</h1>
-<h3>eesti keelest vene keelde </h3>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="checkTranslation()">
-<div id="vastus"></div>
-<h3>vene keelest eesti keelde </h3>
-<input type="button" value="juhuslik sõna" onclick="RUrandomSyna()">
-<br>
-<br>
-<div id="RUrandom-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="RUkontroll" oninput="RUcheckTranslation()">
-<div id="RUvastus"></div>
+<table border="1">
+    <tr>
+        <td>
+            <h3>eesti keelest vene keelde </h3>
+            <input type="button" value="juhuslik sõna" onclick="randomSyna()">
+            <br>
+            <br>
+            <div id="random-syna"></div>
+            <label for="kontroll">Kirjuta sõna vene keeles</label>
+            <input type="text" id="kontroll" oninput="checkTranslation()">
+            <div id="vastus"></div>
+        </td>
+        <td>
+            <h3>vene keelest eesti keelde </h3>
+            <input type="button" value="juhuslik sõna" onclick="RUrandomSyna()">
+            <br>
+            <br>
+            <div id="RUrandom-syna"></div>
+            <label for="RUkontroll">Kirjuta sõna vene keeles</label>
+            <input type="text" id="RUkontroll" oninput="RUcheckTranslation()">
+            <div id="RUvastus"></div>
+        </td>
+    </tr>
+</table>
 
 
 </body>

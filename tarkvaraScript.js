@@ -33,7 +33,7 @@ const synad = [
     'valideerimine'
 ];
 
-const ruSynad = [
+const RUsynad = [
     'исполнение',
     'алгоритм',
     'проекта',
@@ -84,12 +84,38 @@ function checkTranslation() {
     const userInput = document.getElementById("kontroll").value.trim().toLowerCase();
 
     if (currentWordIndex !== -1) {
-        const correctTranslation = ruSynad[currentWordIndex].toLowerCase();
+        const correctTranslation = RUsynad[currentWordIndex].toLowerCase();
 
         if (userInput === correctTranslation) {
             document.getElementById("vastus").innerHTML = "<span style='color: green;'>Õige vastus!</span>";
         } else {
             document.getElementById("vastus").innerHTML = "<span style='color: red;'>Vale vastus. Proovi uuesti.</span>";
+        }
+    }
+}
+
+let RUcurrentWordIndex = -1;
+
+function RUrandomSyna() {
+    RUcurrentWordIndex = Math.floor(Math.random() * RUsynad.length);
+
+    const RUsyna = RUsynad[RUcurrentWordIndex];
+
+    document.getElementById("RUrandom-syna").innerHTML = RUsyna;
+
+    document.getElementById("RUvastus").innerHTML = "";
+}
+
+function RUcheckTranslation() {
+    const RUuserInput = document.getElementById("RUkontroll").value.trim().toLowerCase();
+
+    if (currentWordIndex !== -1) {
+        const RUcorrectTranslation = synad[RUcurrentWordIndex].toLowerCase();
+
+        if (RUuserInput === RUcorrectTranslation) {
+            document.getElementById("RUvastus").innerHTML = "<span style='color: green;'>Õige vastus!</span>";
+        } else {
+            document.getElementById("RUvastus").innerHTML = "<span style='color: red;'>Vale vastus. Proovi uuesti.</span>";
         }
     }
 }
