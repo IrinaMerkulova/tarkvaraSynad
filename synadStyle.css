@@ -91,3 +91,6 @@ select:focus {
 #selgitusTekst:empty {
     display: none;
 }
+h2{
+    text-align: center;
+}
