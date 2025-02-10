@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
-    <script src="tarkvaraScript2.js"></script>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -38,8 +38,9 @@
 </table>
 
 <h1>Select</h1>
-<select onselect="" id="select-tag"></select>
-<div id="description"></div>
-
+<label for="select-tag"></label>
+<select onchange="selected()" id="select-tag"></select>
+<div id="description">Sõnad</div>
+<script src="tarkvaraScript2.js"></script>
 </body>
 </html>

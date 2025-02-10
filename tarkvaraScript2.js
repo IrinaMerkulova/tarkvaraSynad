@@ -118,7 +118,8 @@ function checkSyna(keel){
 }
 
 // -----------------------------------------------------------------------------
-
+const selectTag = document.getElementById("select-tag");
+const descriptionContainer = document.getElementById("description");
 const wordsDescription = {
     "Andmetöötlus": "Andmetöötlus (data processing) on andmete manipuleerimine arvuti abil. See tegevus sisaldab toorandmete teisendamist masin-loetavale kujule, nende liikumist läbi protsessori (CPU) ja mälu väljundseadmetesse ning väljundi vormindamist ja teisendamist sobivale kujule. Üldisemalt nimetatakse andmetöötluseks alati arvutil toimuvat protsessi, kui see sisaldab nimetatud tegevusi. Andmetöötlust võib käsitleda ka kitsamalt kui mõne organisatsiooni või äri tegevuseks vajalike andmete töötlemist (nt statistiline andmetöötlus).",
     "Andmetöötlussüsteem": "Andmetöötlussüsteem (data processing system) koosneb üldisemalt riistvarast, tarkvarast ja inimestest. Andmetöötlussüsteem on süsteem, mis teeb sisendandmetega mitmesuguseid matemaatilisi operatsioone, eesmärgiga muuta need informatsiooniks, kasutajale vajalikule väljundandmete kujule. Viimane võib olla nii heli, video, graafika, arvude kui ka teksti kujul.",
@@ -130,7 +131,13 @@ const wordsDescription = {
     "Kasutaja andmed": "Kasutaja andmed (user-defined data) on spetsiifilised rakendusele, mida kasutaja jaoks arvutisüsteemi salvestatakse."
 }
 
-function selected(){
-    const selectTag = document.getElementById("selectTag");
+for(let i = 0; i < Object.keys(wordsDescription).length; i++){
+    let option = document.createElement("option");
+    option.value = Object.keys(wordsDescription)[i];
+    option.innerHTML = Object.keys(wordsDescription)[i];
+    selectTag.appendChild(option);
+}
 
+function selected(event){
+    descriptionContainer.innerText = wordsDescription[selectTag.value];
 }
