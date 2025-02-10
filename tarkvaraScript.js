@@ -1,4 +1,4 @@
-const synad=[
+const synad = [
     'teostus',
     'algoritm',
     'kavand',
@@ -30,7 +30,6 @@ const synad=[
     'elutsükkel',
     'arendamine',
     'valideerimine'
-
 ];
 
 const veneSynad = [
@@ -67,14 +66,24 @@ const veneSynad = [
     'валидация'
 ];
 
+const synadMap = synad.reduce((acc, word, index) => {
+    acc[word] = veneSynad[index];
+    return acc;
+}, {});
 
-
-function randomSyna(){
-    const juhuslikSyna=Math.floor(Math.random()*synad.length);
-    const syna=synad[juhuslikSyna];
-    document.getElementById("random-syna").innerHTML=syna;
+function randomSyna() {
+    const juhuslikSyna = Math.floor(Math.random() * synad.length);
+    const syna = synad[juhuslikSyna];
+    document.getElementById("random-syna").innerHTML = syna;
 }
 
-function inputSyna(){
-    
+function inputSyna() {
+    const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+    const translation = synadMap[userInput.toLowerCase()];
+
+    if (translation) {
+        document.getElementById("vastus").innerHTML = `Перевод: ${translation}`;
+    } else {
+        document.getElementById("vastus").innerHTML = "Слово не найдено.";
+    }
 }
