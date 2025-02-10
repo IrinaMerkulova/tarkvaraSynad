@@ -102,5 +102,23 @@ function kontrolliToiget() {
         vastusElement.innerHTML = " Vale!";
         vastusElement.style.color = "red";
     }
+    function populateDropdown() {
+        const dropdown = document.getElementById("wordSelect");
+        for (const word in wordDescriptions) {
+            let option = document.createElement("option");
+            option.value = word;
+            option.textContent = word;
+            dropdown.appendChild(option);
+        }
+    }
 
+    function showDescription() {
+        const selectedWord = document.getElementById("wordSelect").value;
+        const descriptionElement = document.getElementById("description");
+        if (selectedWord) {
+            descriptionElement.textContent = wordDescriptions[selectedWord];
+        } else {
+            descriptionElement.textContent = "";
+        }
+    }
 }
