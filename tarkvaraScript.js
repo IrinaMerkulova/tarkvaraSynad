@@ -85,17 +85,18 @@ function randomSyna(){
 }
 
 
-function checkTranslation() {
-    const userInput = document.getElementById("kontroll").value;
-    const correctTranslation = document.getElementById("kontroll").getAttribute("data-translation");
+function fillTranslationTable() {
+    const tableBody = document.getElementById("translation-table");
 
-    const responseElement = document.getElementById("vastus");
+    for (let i = 0; i < synad.length; i++) {
+        const row = tableBody.insertRow();
 
-    if (userInput.trim().toLowerCase() === correctTranslation.toLowerCase()) {
-        responseElement.innerHTML = "Õige!";
-        responseElement.style.color = "green";
-    } else {
-        responseElement.innerHTML = "Vale!";
-        responseElement.style.color = "red";
+        const cell1 = row.insertCell(0);
+        const cell2 = row.insertCell(1);
+
+        cell1.innerHTML = `${synad[i]} → ${veneSynad[i]}`;
+        cell2.innerHTML = `${veneSynad[i]} → ${synad[i]}`;
     }
 }
+
+window.onload = fillTranslationTable;
