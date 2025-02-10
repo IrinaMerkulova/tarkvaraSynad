@@ -81,6 +81,9 @@ function randomSyna(){
 }
 
 function synadeTolge() {
+    const userInput = document.getElementById("kontroll").value.trim().toLowerCase(); // Ввод пользователя
+    const answerDiv = document.getElementById("vastus");
+
 
 }
 
