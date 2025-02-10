@@ -53,5 +53,3 @@ function kontrolliTolge() {
     } else {
         document.getElementById("vastus").innerText = "Vale! ❌ Õige vastus: " + synad[currentWord];
         document.getElementById("vastus").style.color = "red";
-    }
-}

@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
     <script src="tarkvaraScript.js" defer></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-<!-- TA sõnad on vaja pähe õppida -->
 <h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br><br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll">
-<button onclick="kontrolliTolge()">Kontrolli</button>
-<div id="vastus"></div>
+<table>
+    <tr>
+        <th>Eesti → Vene</th>
+        <th>Vene → Eesti</th>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="randomSyna()">Juhuslik sõna</button>
+            <div id="random-syna-et"></div>
+            <label for="kontroll-et">Kirjuta sõna vene keeles</label>
+            <input type="text" id="kontroll-et">
+            <button onclick="kontrolliTolgeET()">Kontrolli</button>
+            <div id="vastus-et"></div>
+        </td>
+        <td>
+            <button onclick="randomSynaRU()">Juhuslik sõna</button>
+            <div id="random-syna-ru"></div>
+            <label for="kontroll-ru">Kirjuta sõna eesti keeles</label>
+            <input type="text" id="kontroll-ru">
+            <button onclick="kontrolliTolgeRU()">Kontrolli</button>
+            <div id="vastus-ru"></div>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
