@@ -116,3 +116,8 @@ function checkSyna(keel){
     vastusContainer.innerText = access ? "" : "Vale";
     vastusContainer.style.color = access ? "" : "red";
 }
+
+function selected(){
+    const selectTag = document.getElementById("selectTag");
+
+}
