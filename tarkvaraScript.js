@@ -32,24 +32,50 @@ const synad = {
     'valideerimine': 'валидация'
 };
 
-let currentWord = '';
+let currentWordET = '';
+let currentWordRU = '';
 
 function randomSyna() {
     const keys = Object.keys(synad);
     const juhuslikSyna = Math.floor(Math.random() * keys.length);
-    currentWord = keys[juhuslikSyna];
-    document.getElementById("random-syna").innerHTML = currentWord;
-    document.getElementById("kontroll").value = "";
-    document.getElementById("vastus").innerText = "";
+    currentWordET = keys[juhuslikSyna];
+    document.getElementById("random-syna-et").innerHTML = currentWordET;
+    document.getElementById("kontroll-et").value = "";
+    document.getElementById("vastus-et").innerText = "";
 }
 
-function kontrolliTolge() {
-    const userInput = document.getElementById("kontroll").value.trim().toLowerCase();
-    const correctAnswer = synad[currentWord].toLowerCase();
+function randomSynaRU() {
+    const values = Object.values(synad);
+    const juhuslikSyna = Math.floor(Math.random() * values.length);
+    currentWordRU = values[juhuslikSyna];
+    document.getElementById("random-syna-ru").innerHTML = currentWordRU;
+    document.getElementById("kontroll-ru").value = "";
+    document.getElementById("vastus-ru").innerText = "";
+}
+
+function kontrolliTolgeET() {
+    const userInput = document.getElementById("kontroll-et").value.trim().toLowerCase();
+    const correctAnswer = synad[currentWordET].toLowerCase();
 
     if (userInput === correctAnswer) {
-        document.getElementById("vastus").innerText = "Õige! ✅";
-        document.getElementById("vastus").style.color = "green";
+        document.getElementById("vastus-et").innerText = "Õige! ✅";
+        document.getElementById("vastus-et").style.color = "green";
     } else {
-        document.getElementById("vastus").innerText = "Vale! ❌ Õige vastus: " + synad[currentWord];
-        document.getElementById("vastus").style.color = "red";
+        document.getElementById("vastus-et").innerText = "Vale! ❌ Õige vastus: " + correctAnswer;
+        document.getElementById("vastus-et").style.color = "red";
+    }
+}
+
+function kontrolliTolgeRU() {
+    const userInput = document.getElementById("kontroll-ru").value.trim().toLowerCase();
+    const correctAnswer = Object.keys(synad).find(key => synad[key].toLowerCase() === currentWordRU.toLowerCase());
+
+    if (userInput === correctAnswer) {
+        document.getElementById("vastus-ru").innerText = "Õige! ✅";
+        document.getElementById("vastus-ru").style.color = "green";
+    } else {
+        document.getElementById("vastus-ru").innerText = "Vale! ❌ Õige vastus: " + correctAnswer;
+        document.getElementById("vastus-ru").style.color = "red";
+    }
+}
+
