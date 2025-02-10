@@ -1,6 +1,5 @@
 function randomSyna(){
 // esimese masiivi loomine
-
     const synad=[
         'teostus',
         'algoritm',
@@ -42,4 +41,51 @@ function randomSyna(){
 
     //lisame html-lehele
     document.getElementById("random-syna").innerHTML=syna;
+}
+
+function kontrollSyna() {
+    const sona = document.getElementById("random-syna").innerHTML;
+    const kasutajaSisend = document.getElementById("kontroll").value.trim().toLowerCase();
+    const sonastik = {
+        'teostus': 'реализация',
+        'algoritm': 'алгоритм',
+        'kavand': 'проект',
+        'kasutajaliides': 'пользовательский интерфейс',
+        'mudel': 'модель',
+        'andmebaasi skeem': 'схема базы данных',
+        'standart': 'стандарт',
+        'tsükkel': 'цикл',
+        'andmetöötlus': 'обработка данных',
+        'andmestruktuur': 'структура данных',
+        'arenduskeskkond': 'среда разработки',
+        'projektihalduse tööriist': 'инструмент управления проектами',
+        'kavandamine': 'проектирование',
+        'iteratsioon': 'итерация',
+        'parandus': 'исправление',
+        'parandamine': 'исправление',
+        'koskmudel': 'каскадная модель',
+        'agiilne mudel': 'гибкая модель (agile)',
+        'spiraalne mudel': 'спиральная модель',
+        'inkrementaalne mudel': 'инкрементальная модель',
+        'nõudmised': 'требования',
+        'realiseerimine': 'реализация',
+        'testimine': 'тестирование',
+        'integreerimine': 'интеграция',
+        'kasutamine': 'использование',
+        'hooldus': 'обслуживание',
+        'eelised': 'преимущества',
+        'puudused': 'недостатки',
+        'elutsükkel': 'жизненный цикл',
+        'arendamine': 'разработка',
+        'valideerimine': 'валидация'
+    };
+    const oigeTolk = sonastik[sona].toLowerCase();
+
+    if (kasutajaSisend === oigeTolk) {
+        document.getElementById("vastus").innerHTML = "Õige!";
+        document.getElementById("vastus").style.color = "green";
+    } else {
+        document.getElementById("vastus").innerHTML = "Vale!";
+        document.getElementById("vastus").style.color = "red";
+    }
 }
