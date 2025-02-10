@@ -1,90 +1,95 @@
-function randomSyna(){
-// esimese masiivi loomine
+const synad = [
+    'teostus',
+    'algoritm',
+    'kavand',
+    'kasutajaliides',
+    'mudel',
+    'andmebaasi skeem',
+    'standart',
+    'tsükkel',
+    'andmetöötlus',
+    'andmestruktuur',
+    'arenduskeskkond',
+    'projektihalduse tööriist',
+    'kavandamine',
+    'iteratsioon',
+    'parandus',
+    'parandamine',
+    'koskmudel',
+    'agiilne mudel',
+    'spiraalne mudel',
+    'inkrementaalne mudel',
+    'nõudmised',
+    'realiseerimine',
+    'testimine',
+    'integreerimine',
+    'kasutamine',
+    'hooldus',
+    'eelised',
+    'puudused',
+    'elutsükkel',
+    'arendamine',
+    'valideerimine'
+];
 
-    const synad=[
-        'teostus',
-        'algoritm',
-        'kavand',
-        'kasutajaliides',
-        'mudel',
-        'andmebaasi skeem',
-        'standart',
-        'tsükkel',
-        'andmetöötlus',
-        'andmestruktuur',
-        'arenduskeskkond',
-        'projektihalduse tööriist',
-        'kavandamine',
-        'iteratsioon',
-        'parandus',
-        'parandamine',
-        'koskmudel',
-        'agiilne mudel',
-        'spiraalne mudel',
-        'inkrementaalne mudel',
-        'nõudmised',
-        'realiseerimine',
-        'testimine',
-        'integreerimine',
-        'kasutamine',
-        'hooldus',
-        'eelised',
-        'puudused',
-        'elutsükkel',
-        'arendamine',
-        'valideerimine'
+const veneSynad = [
+    'реализация',
+    'алгоритм',
+    'проектирование',
+    'пользовательский интерфейс',
+    'модель', 'схема базы данных',
+    'стандарт',
+    'цикл',
+    'обработка данных',
+    'структура данных',
+    'среда разработки',
+    'инструмент управления проектом',
+    'проектирование',
+    'итерация',
+    'коррекция',
+    'исправление',
+    'модель водопада',
+    'агильная модель',
+    'спиральная модель',
+    'инкрементальная модель',
+    'требования',
+    'реализация',
+    'тестирование',
+    'интеграция',
+    'использование',
+    'обслуживание',
+    'преимущества',
+    'недостатки',
+    'жизненный цикл',
+    'разработка',
+    'валидация'
+];
 
-    ];
-
-    const veneSynad = [
-        'реализация',
-        'алгоритм',
-        'проектирование',
-        'пользовательский интерфейс',
-        'модель', 'схема базы данных',
-        'стандарт',
-        'цикл',
-        'обработка данных',
-        'структура данных',
-        'среда разработки',
-        'инструмент управления проектом',
-        'проектирование',
-        'итерация',
-        'коррекция',
-        'исправление',
-        'модель водопада',
-        'агильная модель',
-        'спиральная модель',
-        'инкрементальная модель',
-        'требования',
-        'реализация',
-        'тестирование',
-        'интеграция',
-        'использование',
-        'обслуживание',
-        'преимущества',
-        'недостатки',
-        'жизненный цикл',
-        'разработка',
-        'валидация'
-    ];
-    //random sõna - arv
-    const juhuslikSyna=Math.floor(Math.random()*synad.length);
-
-    //võtame random sõna massivist
-    const syna=synad[juhuslikSyna];
-
+// Функция отображения случайного слова
+function randomSyna() {
+    const juhuslikSyna = Math.floor(Math.random() * synad.length);
+    const syna = synad[juhuslikSyna];
     const translationIndex = synad.indexOf(syna);
-    const translatedWords = veneSynad[translationIndex];
+    const translatedWord = veneSynad[translationIndex];
 
-
-    document.getElementById("random-syna").innerHTML = `Sõna: ${syna}<br>Tõlgitud: ${translatedWord}`;
-
-    //lisame html-lehele
+    document.getElementById("random-syna").innerHTML = `Sõna: ${syna}`;
     document.getElementById("kontroll").setAttribute("data-translation", translatedWord);
 }
 
+// Функция проверки введенного перевода
+function checkTranslation() {
+    const userInput = document.getElementById("kontroll").value.trim().toLowerCase();
+    const correctTranslation = document.getElementById("kontroll").getAttribute("data-translation").toLowerCase();
+    const responseElement = document.getElementById("vastus");
 
+    if (userInput === correctTranslation) {
+        responseElement.innerHTML = "<span style='color: green;'>Õige tõlge!</span>";
+    } else {
+        responseElement.innerHTML = "<span style='color: red;'>Vale tõlge!</span>";
+    }
+}
+
+// Функция заполнения таблицы переводов
 function fillTranslationTable() {
     const tableBody = document.getElementById("translation-table");
 
@@ -99,4 +104,5 @@ function fillTranslationTable() {
     }
 }
 
+// вызываем функцию для заполнения таблицы при загрузке страницы
 window.onload = fillTranslationTable;

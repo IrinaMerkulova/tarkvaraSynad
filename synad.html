@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
-    <script src="tarkvaraScript.js"></script>
     <style>
         table {
             width: 100%;
@@ -14,19 +13,34 @@
             text-align: center;
             border: 1px solid black;
         }
-
     </style>
 </head>
 <body>
 <h1>Tarkvara sõnad</h1>
+
 <input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
+<br><br>
+
+<label for="kontroll">Kirjuta sõna vene keeles:</label>
 <input type="text" id="kontroll" oninput="checkTranslation()">
 <div id="vastus"></div>
 
+<div id="random-syna"></div>
 
+<h2>Tõlketabel:</h2>
+<table>
+    <thead>
+    <tr>
+        <th>eesti → vene keel</th>
+        <th>vene → eesti keel</th>
+    </tr>
+    </thead>
+    <tbody id="translation-table">
+    </tbody>
+</table>
+
+
+
+<script src="tarkvaraScript.js"></script>
 </body>
 </html>
