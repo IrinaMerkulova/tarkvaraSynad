@@ -28,6 +28,24 @@
     <label for="ee_kontroll">Kirjuta sõna eesti keeles:</label>
     <input type="text" id="ee_kontroll" oninput="ee_checkTranslation()">
     <div id="ee_vastus"></div>
+
+    <label for="words">Vali sõna ja saad kirjelduse</label>
+
+    <select name="words" id="words" onchange="showDescription()">
+        <option value="andmetöötlussüsteem">Andmetöötlussüsteem</option>
+        <option value="draiver">Draiver</option>
+        <option value="rakendustarkvara">Rakendustarkvara</option>
+        <option value="BIOS">BIOS</option>
+        <option value="systarkvara">süsteemi tarkvara</option>
+
+        <option value="Riistvara">Riistvara</option>
+        <option value="Püsivara">Püsivara</option>
+        <option value="Operatsioonisüsteem">Operatsioonisüsteem </option>
+        <option value="Rakendustarkvara">Rakendustarkvara</option>
+        <option value="Süsteemikonfiguratsioonifailid">Süsteemi konfiguratsioonifailid</option>
+        <option value="Kasutajaandmed">Kasutaja andmed</option>
+    </select>
+    <p id="description"></p>
 </div>
 </body>
 </html>
