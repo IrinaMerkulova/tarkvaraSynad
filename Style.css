@@ -1,0 +1,106 @@
+/* Основные стили для тела страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f8ff; /* Очень светлый голубой фон */
+    color: #333; /* Темный текст для контраста */
+    margin: 0;
+    padding: 0;
+}
+
+/* Стиль заголовка */
+h1 {
+    text-align: center;
+    color: #0277bd; /* Голубой для заголовка */
+    padding: 20px 0;
+    background-color: #b3e5fc; /* Нежно-голубой фон */
+    margin: 0;
+}
+
+/* Стили для таблицы */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+/* Стили для ячеек таблицы */
+td {
+    padding: 20px;
+    border: 1px solid #b3e5fc; /* Легкий голубой бордер для ячеек */
+    text-align: center;
+    vertical-align: top;
+}
+
+/* Стили для заголовков внутри ячеек */
+h2 {
+    color: #d81b60; /* Розовый для подзаголовков */
+    font-size: 1.5em;
+}
+
+/* Стили для случайного слова */
+#random-syna, #random-venesyna {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0277bd; /* Голубой для случайных слов */
+    margin: 20px 0;
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #f06292; /* Розовая кнопка */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Стили для кнопок при наведении */
+button:hover {
+    background-color: #ec407a; /* Тёмно-розовый при наведении */
+}
+
+/* Стили для текстовых полей */
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #b3e5fc; /* Легкий голубой бордер */
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопок */
+input[type="button"] {
+    background-color: #0288d1; /* Голубая кнопка */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+/* Стили для кнопок при наведении */
+input[type="button"]:hover {
+    background-color: #0277bd; /* Тёмно-голубой при наведении */
+}
+
+/* Стили для ответа (красный/зелёный текст) */
+#vastus, #venevastus {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#vastus {
+    color: green;
+}
+
+#venevastus {
+    color: red;
+}

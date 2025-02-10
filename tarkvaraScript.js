@@ -71,40 +71,25 @@ function randomSyna() {
 
 
     //random sõna - arv
-    const juhuslikSyna = Math.floor(Math.random() * Synad.length);
+    const juhuslikSynad = Math.floor(Math.random() * Synad.length);
 
     //võtame random sõna massivist
-    currentWord = Synad[juhuslikSyna];
+    currentWord = Synad[juhuslikSynad];
 
     //lisame html-lehele
     document.getElementById("random-syna").innerHTML = currentWord ;
     document.getElementById("kontroll").value = "";
     document.getElementById("vastus").innerHTML = "";
 }
-function randomVeneSyna() {
-    const juhuslikSyna = Math.floor(Math.random() * Synad.length);
+function randomVene() {
+    const juhuslikSynad = Math.floor(Math.random() * Synad.length);
 
-    currentWord = Tolgisynad[juhuslikSyna];
+    currentWord = Tolgisynad[juhuslikSynad];
 
     //lisame html-lehele
     document.getElementById("random-venesyna").innerHTML = currentWord ;
     document.getElementById("kontrollVene").value = "";
     document.getElementById("venevastus").innerHTML = "";
-}
-
-function Check() {
-    const userInput = document.getElementById('kontroll').value.trim();
-    const index = Synad.indexOf(currentWord);
-
-    if (index !== -1) {
-        if (userInput.toLowerCase() === Tolgisynad[index].toLowerCase()) {
-            document.getElementById("vastus").innerHTML = "Õige vastus";
-            document.getElementById("vastus").style.color = "green";
-        } else {
-            document.getElementById("vastus").innerHTML = "Vale vastus. õige vastus on " + Tolgisynad[index];
-            document.getElementById("vastus").style.color = "red";
-        }
-    }
 }
 
 function CheckTolgi() {
@@ -121,3 +106,21 @@ function CheckTolgi() {
         }
     }
 }
+
+
+
+function Check() {
+    const userInput = document.getElementById('kontroll').value.trim();
+    const index = Synad.indexOf(currentWord);
+
+    if (index !== -1) {
+        if (userInput.toLowerCase() === Tolgisynad[index].toLowerCase()) {
+            document.getElementById("vastus").innerHTML = "Õige vastus";
+            document.getElementById("vastus").style.color = "green";
+        } else {
+            document.getElementById("vastus").innerHTML = "Vale vastus. õige vastus on " + Tolgisynad[index];
+            document.getElementById("vastus").style.color = "red";
+        }
+    }
+}
+
