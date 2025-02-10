@@ -1,81 +1,49 @@
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("kontroll").addEventListener("input", kontrolliToiget);
+});
+
 function randomSyna(){
-// esimese masiivi loomine
+    const synad={
+        'teostus': 'реализация',
+        'algoritm': 'алгоритм',
+        'kavand': 'план',
+        'kasutajaliides': 'пользовательский интерфейс',
+        'mudel': 'модель',
+        'andmebaasi skeem': 'схема базы данных',
+        'standart': 'стандарт',
+        'tsükkel': 'цикл',
+        'andmetöötlus': 'обработка данных',
+        'andmestruktuur': 'структура данных',
+        'arenduskeskkond': 'среда разработки',
+        'projektihalduse tööriist': 'инструмент управления проектами',
+        'kavandamine': 'проектирование',
+        'iteratsioon': 'итерация',
+        'parandus': 'исправление',
+        'parandamine': 'улучшение',
+        'koskmudel': 'каскадная модель',
+        'agiilne mudel': 'гибкая модель',
+        'spiraalne mudel': 'спиральная модель',
+        'inkrementaalne mudel': 'инкрементальная модель',
+        'nõudmised': 'требования',
+        'realiseerimine': 'осуществление',
+        'testimine': 'тестирование',
+        'integreerimine': 'интеграция',
+        'kasutamine': 'использование',
+        'hooldus': 'обслуживание',
+        'eelised': 'преимущества',
+        'puudused': 'недостатки',
+        'elutsükkel': 'жизненный цикл',
+        'arendamine': 'разработка',
+        'valideerimine': 'валидация'
+    };
 
-    const synad=[
-        'teostus',
-        'algoritm',
-        'kavand',
-        'kasutajaliides',
-        'mudel',
-        'andmebaasi skeem',
-        'standart',
-        'tsükkel',
-        'andmetöötlus',
-        'andmestruktuur',
-        'arenduskeskkond',
-        'projektihalduse tööriist',
-        'kavandamine',
-        'iteratsioon',
-        'parandus',
-        'parandamine',
-        'koskmudel',
-        'agiilne mudel',
-        'spiraalne mudel',
-        'inkrementaalne mudel',
-        'nõudmised',
-        'realiseerimine',
-        'testimine',
-        'integreerimine',
-        'kasutamine',
-        'hooldus',
-        'eelised',
-        'puudused',
-        'elutsükkel',
-        'arendamine',
-        'valideerimine'
+    const synaKeys = Object.keys(synad);
+    const juhuslikSyna = Math.floor(Math.random() * synaKeys.length);
+    const syna = synaKeys[juhuslikSyna];
 
-    ];
-    const Vene=[
-        'реализация',
-        'алгоритм',
-        'план',
-        'пользовательский интерфейс',
-        'модель',
-        'схема базы данных',
-        'стандарт',
-        'цикл',
-        'обработка данных',
-        'структура данных',
-        'среда разработки',
-        'инструмент управления проектами',
-        'проектирование',
-        'итерация',
-        'исправление',
-        'улучшение',
-        'каскадная модель',
-        'гибкая модель',
-        'спиральная модель',
-        'инкрементальная модель',
-        'требования',
-        'осуществление',
-        'тестирование',
-        'интеграция',
-        'использование',
-        'обслуживание',
-        'преимущества',
-        'недостатки',
-        'жизненный цикл',
-        'разработка',
-        'валидация.'
-
-    ];
-
-    //random sõna - arv
-    const juhuslikSyna=Math.floor(Math.random()*synad.length);
-
-    //võtame random sõna massivist
-    const syna=synad[juhuslikSyna];
-
-    //lisame html-lehele
-    document.getElementById("random-syna").innerHTML=syna;
+    document.getElementById("random-syna").innerHTML = syna;
+    document.getElementById("kontroll").setAttribute("data-correct", synad[syna]);
 }
+
+
+
