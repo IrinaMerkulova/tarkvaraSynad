@@ -44,6 +44,18 @@ function randomSyna(){
     document.getElementById("random-syna").innerHTML = syna;
     document.getElementById("kontroll").setAttribute("data-correct", synad[syna]);
 }
+function kontrolliToiget(){
+    const kasutajaSisestus = document.getElementById("kontroll").value.trim().toLowerCase();
+    const oigeVastus = document.getElementById("kontroll").getAttribute("data-correct").toLowerCase();
+    const vastusElement = document.getElementById("vastus");
 
+    if (kasutajaSisestus === oigeVastus) {
+        vastusElement.innerHTML = "\u2705 Õige!";
+        vastusElement.style.color = "green";
+    } else {
+        vastusElement.innerHTML = "\u274C Vale! Õige vastus: " + oigeVastus;
+        vastusElement.style.color = "red";
+    }
+}
 
 
