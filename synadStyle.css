@@ -1,0 +1,65 @@
+body {
+    background: linear-gradient(to bottom, #cc99ff 0%, #ffccff 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    opacity: .95;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #ff99ff, #ff0066);
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    text-transform: uppercase;
+    border-bottom: 5px solid MediumVioletRed;
+    border-radius: 80px;
+}
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+table th {
+    background: MediumOrchid;
+    color: MintCream;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: MintCream;
+}
+
+table tr:hover {
+    background: linear-gradient(to bottom, #cc66ff 0%, #ffffff 100%);
+}
+table td a {
+    text-decoration: none;
+    color: #ff0066;
+    font-weight: bold;
+}
+table td a:hover {
+    text-decoration: underline;
+}
+button {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
+}

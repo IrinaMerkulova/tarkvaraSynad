@@ -91,10 +91,10 @@ function KontrolligeEestiKeele() {
     }
 
     if (kasutajaInput === korrektneTolge) {
-        document.getElementById("eesti-tulemus").textContent = "Правильно!";
+        document.getElementById("eesti-tulemus").textContent = "Õige!";
         document.getElementById("eesti-tulemus").className = "correct";
     } else {
-        document.getElementById("eesti-tulemus").textContent = "Неправильно! Правильный перевод: " + korrektneTolge;
+        document.getElementById("eesti-tulemus").textContent = "Vale! Õige tõlge: " + korrektneTolge;
         document.getElementById("eesti-tulemus").className = "incorrect";
     }
 }
