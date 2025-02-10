@@ -82,3 +82,18 @@ function randomSyna(){
     // Сохраняем правильный ответ для проверки
     document.getElementById("kontroll").dataset.correctAnswer = correctTranslation;
 }
+
+function checkAnswer(){
+    const input = document.getElementById("kontroll").value.toLowerCase().trim();
+    const correctAnswer = document.getElementById("kontroll").dataset.correctAnswer.toLowerCase();
+
+    const feedback = document.getElementById("vastus");
+
+    if (input === correctAnswer) {
+        feedback.innerHTML = "Õige vastus!";
+        feedback.className = "correct";
+    } else {
+        feedback.innerHTML = "Vale vastus!";
+        feedback.className = "incorrect";
+    }
+}
