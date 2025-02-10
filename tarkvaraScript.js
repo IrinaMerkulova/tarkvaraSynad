@@ -86,6 +86,17 @@ function randomSyna(){
         document.getElementById("vastus").innerHTML = "";
     }
 
-    //lisame html-lehele
-    document.getElementById("random-syna").innerHTML=syna;
+    function kontrolliToiget() {
+        const kasutajaSisestus = document.getElementById("kontroll").value.trim().toLowerCase();
+        const oigeVastus = document.getElementById("kontroll").getAttribute("data-correct").toLowerCase();
+        const vastusElement = document.getElementById("vastus");
+
+        if (kasutajaSisestus === oigeVastus) {
+            vastusElement.innerHTML = " Õige!";
+            vastusElement.style.color = "green";
+        } else {
+            vastusElement.innerHTML = " Vale!";
+            vastusElement.style.color = "red";
+        }
+    }
 }
