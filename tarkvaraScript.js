@@ -1,5 +1,4 @@
 function randomSyna(){
-    // esimese masiivi loomine
     const synad = [
         'teostus',
         'algoritm',
@@ -13,9 +12,12 @@ function randomSyna(){
         'andmestruktuur',
         'arenduskeskkond',
         'projektihalduse tööriist',
-        'kavandamine', 'iteratsioon',
-        'parandus', 'parandamine',
-        'koskmudel', 'agiilne mudel',
+        'kavandamine',
+        'iteratsioon',
+        'parandus',
+        'parandamine',
+        'koskmudel',
+        'agiilne mudel',
         'spiraalne mudel',
         'inkrementaalne mudel',
         'nõudmised',
@@ -65,21 +67,16 @@ function randomSyna(){
         'проверка'
     ];
 
-    // random sõna - arv
     const juhuslikSyna = Math.floor(Math.random() * synad.length);
 
-    // võtame random sõna massivist
     const syna = synad[juhuslikSyna];
     const correctTranslation = translations[juhuslikSyna];
 
-    // lisame html-lehele
     document.getElementById("random-syna").innerHTML = syna;
 
-    // Очищаем поле ввода и результат
     document.getElementById("kontroll").value = '';
     document.getElementById("vastus").innerHTML = '';
 
-    // Сохраняем правильный ответ для проверки
     document.getElementById("kontroll").dataset.correctAnswer = correctTranslation;
 }
 
