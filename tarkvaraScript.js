@@ -67,6 +67,17 @@ const synadTolge = [
     "разработка",
     "валидация"
 ];
+const wordDescriptions = {
+    "Andmetöötlus": "Andmete manipuleerimine arvuti abil, sisaldades nende teisendamist ja töötlemist.",
+    "Andmetöötlussüsteem": "Süsteem, mis teeb sisendandmetega mitmesuguseid matemaatilisi operatsioone.",
+    "Riistvara": "Kõik arvuti füüsilised komponendid nagu kuvar, protsessor, mälu, klaviatuur jne.",
+    "Püsivara": "Püsimällu salvestatud käsu- ja andmekogum, mis on seotud riistvara komponendiga.",
+    "BIOS": "Püsivara, mis sisaldab instruktsioone klaviatuuri sisendi ja ekraaniväljundi tarbeks.",
+    "Operatsioonisüsteem": "Programm, mis juhib arvuti tööd ja haldab riistvararessursse.",
+    "Rakendustarkvara": "Kasutaja eesmärkide täitmiseks loodud ja installeeritud tarkvara.",
+    "Süsteemi konfiguratsioonifailid": "Andmed, mis on vajalikud arvutisüsteemi enda toimimiseks.",
+    "Kasutaja andmed": "Rakendustele spetsiifilised andmed, mida kasutaja arvutisüsteemi salvestab."
+};
 
 function randomSyna() {
     const juhuslikIndex = Math.floor(Math.random() *  synad.length);
@@ -85,10 +96,11 @@ function kontrolliToiget() {
     const vastusElement = document.getElementById("vastus");
 
     if (kasutajaSisestus === oigeVastus) {
-        vastusElement.innerHTML = "✅ Õige!";
+        vastusElement.innerHTML = " Õige!";
         vastusElement.style.color = "green";
     } else {
-        vastusElement.innerHTML = "❌ Vale!";
+        vastusElement.innerHTML = " Vale!";
         vastusElement.style.color = "red";
     }
+
 }
