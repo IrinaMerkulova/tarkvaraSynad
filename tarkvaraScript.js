@@ -1,9 +1,6 @@
 
 let valitudIndex = null;
 
-function randomSyna(){
-// esimese masiivi loomine
-
     const synad=[
         'teostus',
         'algoritm',
@@ -71,14 +68,14 @@ function randomSyna(){
         'разработка',
         'проверка'
     ];
-    //random sõna - arv
-    const juhuslikSyna=Math.floor(Math.random()*synad.length);
 
-    //võtame random sõna massivist
-    const syna=synad[juhuslikSyna];
+function randomSyna() {
+    valitudIndex = Math.floor(Math.random() * synad.length);
+    document.getElementById("random-syna").textContent = synad[valitudIndex];
 
-    //lisame html-lehele
-    document.getElementById("random-syna").innerHTML=syna;
+    // Очищаем поле ввода и сообщение
+    document.getElementById("kontroll").value = "";
+    document.getElementById("vastus").textContent = "";
 }
 
 function kontrolliVastus() {
@@ -101,3 +98,5 @@ function kontrolliVastus() {
         vastusElement.style.color = "red";
     }
 }
+
+
