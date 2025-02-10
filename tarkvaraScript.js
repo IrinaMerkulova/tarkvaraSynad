@@ -82,4 +82,16 @@ function randomSyna(){
     document.getElementById("random-syna").innerHTML=syna;
 }
 
+function synadeT() {
+    const userInput = document.getElementById("kontroll").value.trim().toLowerCase(); // Ввод пользователя
+    const answerDiv = document.getElementById("vastus");
 
+    // Проверяем, правильный ли перевод
+    if (userInput === tolgiSyna.toLowerCase()) {
+        answerDiv.innerHTML = "Õige tõlge!";
+        answerDiv.style.color = "green";
+    } else {
+        answerDiv.innerHTML = "Vale tõlge, proovige uuesti!";
+        answerDiv.style.color = "red";
+    }
+}
