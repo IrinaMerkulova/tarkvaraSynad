@@ -2,19 +2,36 @@
 <html lang="et">
 <head>
     <meta charset="UTF-8">
-    <title>Tarkvara sõnad</title>
+    <title>Tarkvara Sõnastik</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="tarkvaraScript.js"></script>
 </head>
 <body>
-<h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="">
-<div id="vastus"></div>
+<div class="container">
+    <div class="game-section">
+        <div class="word-display">
+            <h2>Õpi Sõnu</h2>
+            <div class="language-switch">
+                <span id="language-indicator">Eesti keeles</span>
+                <button onclick="KeeleVahetamine()" class="language-btn">Vaheta keel</button>
+            </div>
+            <div class="word-box">
+                <span id="random-syna"></span>
+                <button onclick="randomSyna()" class="new-word-btn">Uus sõna</button>
+            </div>
+            <div class="input-box">
+                <input type="text" id="kontroll" placeholder="Sisesta tõlge...">
+                <div id="vastus"></div>
+            </div>
+        </div>
+    </div>
 
-
+    <div class="section dictionary">
+        <h2>Sõnastik:</h2>
+        <select id="synad-dropdown"></select>
+        <div id="kirjeldus"></div>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
