@@ -1,0 +1,157 @@
+body {
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.game-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.word-display {
+    text-align: center;
+}
+
+h2 {
+    color: #2D3436;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.language-switch {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#language-indicator {
+    font-weight: bold;
+    color: #2D3436;
+    font-size: 18px;
+    background: #F1F2F6;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+button {
+    background: #4834D4;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #686DE0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(104, 109, 224, 0.4);
+}
+
+.word-box {
+    margin: 25px 0;
+}
+
+#random-syna {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2D3436;
+    display: block;
+    margin: 20px 0;
+    padding: 20px;
+    background: #F1F2F6;
+    border-radius: 12px;
+}
+
+.input-box {
+    margin: 20px 0;
+}
+
+input, select {
+    padding: 12px 20px;
+    border: 2px solid #DFE6E9;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4834D4;
+    box-shadow: 0 0 10px rgba(72, 52, 212, 0.2);
+}
+
+#vastus {
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.correct {
+    background-color: #00B894;
+    color: white;
+}
+
+.incorrect {
+    background-color: #FF7675;
+    color: white;
+}
+
+.dictionary {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.description-box {
+    background: #F1F2F6;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.description-box h3 {
+    margin-top: 0;
+    color: #2D3436;
+    font-size: 20px;
+}
+
+.description-box p {
+    margin: 12px 0;
+    color: #636E72;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#random-syna {
+    animation: fadeIn 0.3s ease-out;
+}
