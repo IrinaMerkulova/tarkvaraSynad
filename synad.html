@@ -2,19 +2,46 @@
 <html lang="et">
 <head>
     <meta charset="UTF-8">
-    <title>Tarkvara sõnad</title>
-    <script src="tarkvaraScript.js"></script>
+    <title>Tarkvara Sõnad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Tarkvara sõnad</h1>
-<input type="button" value="juhuslik sõna" onclick="randomSyna()">
-<br>
-<br>
-<div id="random-syna"></div>
-<label for="kontroll">Kirjuta sõna vene keeles</label>
-<input type="text" id="kontroll" oninput="">
-<div id="vastus"></div>
+    <div class="container">
+        <h1>Tarkvara Sõnastik ja Harjutused</h1>
 
+        <!-- SEKTSIOON 1: Eesti keelest vene keelde tõlkimine -->
+        <section>
+            <h2>Tõlgi eesti keelest vene keelde</h2>
+            <input type="button" value="Võta juhuslik sõna" onclick="randomSyna()">
+            <div id="random-syna"></div>
+            <label for="kontroll">Kirjuta sõna vene keeles:</label>
+            <input type="text" id="kontroll" oninput="kontrolliTolget()">
+            <div id="vastus1" class="vastus"></div>
+        </section>
 
+        <!-- SEKTSIOON 2: Vene keelest eesti keelde tõlkimine -->
+        <section>
+            <h2>Tõlgi vene keelest eesti keelde</h2>
+            <input type="button" value="Võta juhuslik venekeelne sõna" onclick="randomVeneSyna()">
+            <div id="random-vene-syna"></div>
+            <label for="kontroll-vene">Kirjuta sõna eesti keeles:</label>
+            <input type="text" id="kontroll-vene" oninput="kontrolliVeneTolget()">
+            <div id="vastus2" class="vastus"></div>
+        </section>
+
+        <!-- SEKTSIOON 3: Terminid ja nende kirjeldused -->
+        <section>
+            <h2>Terminite seletused</h2>
+            <label for="termini-valik">Vali termin, et näha selle kirjeldust:</label>
+            <select id="termini-valik" onchange="naitaKirjeldust()">
+                <option value="">-- Vali termin --</option>
+                <!-- Valikud lisatakse dünaamiliselt JavaScriptiga -->
+            </select>
+            <div id="termini-kirjeldus"></div>
+        </section>
+    </div>
+
+    <script src="tarkvaraScript.js"></script>
 </body>
 </html>
